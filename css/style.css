@@ -2445,13 +2445,13 @@ button, input, select, textarea {
 .snack-pill {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 2px;
 }
 
 .snack-thumb {
-    width: 22px;
-    height: 22px;
+    width: 5px;
+    height: 10px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 }
