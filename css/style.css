@@ -2488,4 +2488,108 @@ button, input, select, textarea {
     gap: 2rem;
   }
 }
+   
+/* =========================================
+   KRAVIONEX - COMPACT MACHINE DETAIL LAYOUT
+   ========================================= */
+
+/* Main machine section */
+.machine-detail-hero {
+    padding: 2rem 0;
+}
+
+/* Horizontal image and content layout */
+.machine-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 2.5rem;
+    align-items: center;
+}
+
+/* Square machine image container */
+.machine-detail-visual {
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Machine image sizing */
+.machine-detail-visual img {
+    width: 100%;
+    max-height: 320px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Machine heading */
+.machine-page-title {
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    line-height: 1.2;
+    margin: 0.5rem 0 0.75rem;
+}
+
+/* Machine description */
+.machine-summary-text,
+.machine-overview-text {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Snack labels */
+.snack-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.snack-pill {
+    font-size: 12px;
+    padding: 5px 9px;
+    gap: 6px;
+}
+
+.snack-thumb {
+    width: 25px !important;
+    height: 25px !important;
+    min-width: 25px;
+    min-height: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Tablet and mobile layout */
+@media (max-width: 900px) {
+    .machine-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .machine-detail-visual {
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+    .machine-detail-hero {
+        padding: 1.25rem 0;
+    }
+
+    .machine-detail-visual {
+        max-width: 100%;
+    }
+
+    .machine-page-title {
+        font-size: 1.7rem;
+    }
+}
+
 
