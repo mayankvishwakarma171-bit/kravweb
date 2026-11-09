@@ -9,20 +9,159 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
   <style>
-    .machine-page-hero { padding: clamp(2.5rem,5vw,4.5rem) 0; background: linear-gradient(180deg,#F7F5EF 0%,#fff 100%); border-bottom: 1px solid #E8E3D8; }
-    .machine-page-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem,4vw,3.5rem); align-items: center; }
-    @media(max-width:900px){ .machine-page-grid{ grid-template-columns:1fr; } }
-    .machine-visual-card { background: radial-gradient(circle at center,#fff 0%,#FAF8F2 100%); border:1px solid #E8E3D8; border-radius:20px; padding:clamp(1.5rem,3vw,2.5rem); text-align:center; box-shadow:0 8px 32px rgba(0,0,0,.1); position:relative; }
-    .machine-visual-card img { max-height:420px; width:100%; object-fit:contain; filter:drop-shadow(0 16px 32px rgba(0,0,0,.15)); transition:transform .4s ease; }
-    .machine-visual-card:hover img { transform:scale(1.03); }
-    .fuel-pill { display:inline-flex; align-items:center; gap:.45rem; background:rgba(197,161,91,.15); color:#9B7A35; font-size:.82rem; font-weight:700; padding:.4rem 1rem; border-radius:999px; border:1px solid rgba(197,161,91,.35); margin-top:1rem; }
-    .badge-label { display:inline-block; font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#C5A15B; margin-bottom:.75rem; }
-    .machine-page-title { font-family:'Charis SIL',Georgia,serif; font-size:clamp(1.6rem,3vw,2.4rem); color:#141C22; line-height:1.25; margin:.5rem 0 1rem; }
-    .machine-summary-text { font-size:1rem; color:#4A5568; line-height:1.7; margin-bottom:1rem; }
-    .machine-overview-text { font-size:.95rem; color:#6B7680; line-height:1.75; }
-    .snack-pills { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.25rem; }
-    .snack-pill { background:#F7F5EF; border:1px solid #E8E3D8; border-radius:999px; padding:.35rem .9rem; font-size:.875rem; color:#3D4E5C; font-weight:600; transition:border-color .2s,transform .2s; cursor:default; }
-    .snack-pill:hover { border-color:#C5A15B; transform:translateY(-2px); }
+   
+/* COMPACT MACHINE PAGE LAYOUT */
+
+.machine-page-hero {
+    padding: 1.5rem 0;
+    background: linear-gradient(180deg, #F7F5EF 0%, #fff 100%);
+    border-bottom: 1px solid #E8E3D8;
+}
+
+.machine-page-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Square machine image card */
+.machine-visual-card {
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #fff 0%, #FAF8F2 100%);
+    border: 1px solid #E8E3D8;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.08);
+    overflow: hidden;
+}
+
+.machine-visual-card img {
+    width: 100%;
+    max-height: 310px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,.12));
+    transition: transform .3s ease;
+}
+
+.machine-visual-card:hover img {
+    transform: scale(1.02);
+}
+
+.fuel-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    background: rgba(197,161,91,.15);
+    color: #9B7A35;
+    font-size: .75rem;
+    font-weight: 700;
+    padding: .35rem .8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(197,161,91,.35);
+    margin-top: .75rem;
+}
+
+.badge-label {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #C5A15B;
+    margin-bottom: .5rem;
+}
+
+.machine-page-title {
+    font-family: 'Charis SIL', Georgia, serif;
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    color: #141C22;
+    line-height: 1.2;
+    margin: .35rem 0 .7rem;
+}
+
+.machine-summary-text {
+    font-size: .9rem;
+    color: #4A5568;
+    line-height: 1.6;
+    margin-bottom: .7rem;
+}
+
+.machine-overview-text {
+    font-size: .85rem;
+    color: #6B7680;
+    line-height: 1.6;
+}
+
+.snack-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .45rem;
+    margin-top: .9rem;
+}
+
+.snack-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: #F7F5EF;
+    border: 1px solid #E8E3D8;
+    border-radius: 999px;
+    padding: .3rem .65rem;
+    font-size: .78rem;
+    color: #3D4E5C;
+    font-weight: 600;
+    transition: border-color .2s, transform .2s;
+    cursor: default;
+}
+
+.snack-pill:hover {
+    border-color: #C5A15B;
+    transform: translateY(-2px);
+}
+
+.snack-thumb {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Tablet and mobile */
+@media (max-width: 900px) {
+    .machine-page-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .machine-visual-card {
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+    .machine-page-hero {
+        padding: 1.25rem 0;
+    }
+
+    .machine-visual-card {
+        max-width: 100%;
+    }
+
+    .machine-page-title {
+        font-size: 1.7rem;
+    }
+}
+
     .features-section { padding:clamp(2.5rem,5vw,4rem) 0; background:#fff; }
     .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; margin-top:2rem; }
     .feature-card { background:#F7F5EF; border:1px solid #E8E3D8; border-radius:16px; padding:1.5rem 1.75rem; transition:transform .25s,box-shadow .25s; }
