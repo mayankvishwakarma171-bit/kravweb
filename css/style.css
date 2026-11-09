@@ -2441,4 +2441,17 @@ button, input, select, textarea {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+   /* Custom Snack Pill Image Styling */
+.snack-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.snack-thumb {
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 }
