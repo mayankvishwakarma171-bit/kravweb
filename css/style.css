@@ -2441,17 +2441,35 @@ button, input, select, textarea {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-   /* Custom Snack Pill Image Styling */
+ /* Container for all your snack pills to arrange them horizontally */
+.snack-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Spacing between each snack item */
+    align-items: center;
+}
+
+/* Individual pill styling */
 .snack-pill {
     display: inline-flex;
     align-items: center;
-    gap: 2px;
+    gap: 8px; /* Space between the image and the text */
+    padding: 6px 12px;
+    background: #f8f9fa; 
+    border: 1px solid #e2e8f0;
+    border-radius: 50px; /* Gives it a smooth rounded badge look */
+    font-size: 14px;
 }
 
+/* Forces the image to stay small, square, and neat */
 .snack-thumb {
-    width: 5px;
-    height: 10px;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px;
+    min-height: 24px;
     object-fit: cover;
-    border-radius: 25%;
+    border-radius: 50%; /* Makes the image circular */
+    display: inline-block;
 }
 }
+
