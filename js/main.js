@@ -241,6 +241,77 @@ const KRAVIONEX_MACHINERY = [
   }
 ];
 
+// =============================================
+// KRAVIONEX RESPONSIVE MOBILE NAVIGATION
+// =============================================
+
+function initMobileMenu() {
+    const menuButton = document.querySelector('.mobile-nav-toggle');
+    const drawer = document.querySelector('.mobile-drawer');
+    const overlay = document.querySelector('.drawer-overlay');
+    const closeButton = document.querySelector('.mobile-drawer-close');
+
+    // Stop safely if this page does not contain the menu
+    if (!menuButton || !drawer || !overlay) {
+        return;
+    }
+
+    function openMenu() {
+        drawer.classList.add('is-open');
+        overlay.classList.add('is-open');
+        document.body.classList.add('menu-open');
+
+        menuButton.setAttribute('aria-expanded', 'true');
+        drawer.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeMenu() {
+        drawer.classList.remove('is-open');
+        overlay.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+
+        menuButton.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+    }
+
+    // Open and close using the hamburger button
+    menuButton.addEventListener('click', function () {
+        const isOpen = drawer.classList.contains('is-open');
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    // Close using the X button
+    if (closeButton) {
+        closeButton.addEventListener('click', closeMenu);
+    }
+
+    // Close when the background overlay is clicked
+    overlay.addEventListener('click', closeMenu);
+
+    // Close after selecting a navigation link
+    drawer.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close using Escape key
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
+
+    // Set the initial accessibility state
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-controls', 'mobileDrawer');
+    drawer.setAttribute('id', 'mobileDrawer');
+    drawer.setAttribute('aria-hidden', 'true');
+}
+
 // Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
