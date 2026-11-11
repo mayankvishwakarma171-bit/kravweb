@@ -293,10 +293,20 @@ function initMobileMenu() {
     // Close when the background overlay is clicked
     overlay.addEventListener('click', closeMenu);
 
-    // Close after selecting a navigation link
-    drawer.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', closeMenu);
-    });
+   // Close after selecting normal navigation links.
+// Do not close when clicking the Products dropdown.
+
+drawer.querySelectorAll('a').forEach(function (link) {
+
+    if (
+        link.parentElement.classList.contains('mobile-has-dropdown')
+    ) {
+        return;
+    }
+
+    link.addEventListener('click', closeMenu);
+
+});
 
     // Close using Escape key
     document.addEventListener('keydown', function (event) {
