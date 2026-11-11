@@ -2758,3 +2758,194 @@ body.menu-open {
 .mobile-drawer.is-open {
     visibility: visible;
 }
+
+/* ==========================================
+   KRAVIONEX RESPONSIVE HAMBURGER MENU
+   ========================================== */
+
+/* Hamburger button */
+.mobile-nav-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    padding: 10px;
+    background: #FFFFFF;
+
+    border: 1px solid #E5DED0;
+    border-radius: 8px;
+
+    color: #1A1F24;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 10002;
+    flex-shrink: 0;
+}
+
+.mobile-nav-toggle:hover {
+    border-color: #C5A15B;
+    background: #F7F5EF;
+}
+
+.mobile-nav-toggle svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* Dark background overlay */
+.drawer-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15, 20, 25, 0.55);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 10000;
+
+    transition: opacity 0.3s ease,
+                visibility 0.3s ease;
+}
+
+.drawer-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Mobile navigation drawer */
+.mobile-drawer {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: min(88vw, 380px);
+    height: 100vh;
+    height: 100dvh;
+
+    padding: 24px;
+
+    background: #FFFFFF;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    transform: translateX(100%);
+
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 10001;
+
+    box-shadow: -10px 0 35px rgba(0,0,0,0.12);
+
+    transition: transform 0.3s ease,
+                visibility 0.3s ease;
+}
+
+/* Drawer open */
+.mobile-drawer.is-open {
+    transform: translateX(0);
+
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Drawer header */
+.mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #E5DED0;
+}
+
+/* Close button */
+.mobile-drawer-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    color: #1A1F24;
+    background: #F7F5EF !important;
+
+    border: 1px solid #E5DED0 !important;
+    border-radius: 8px;
+}
+
+/* Navigation links */
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-links > li {
+    border-bottom: 1px solid #EEEAE2;
+}
+
+.mobile-nav-links > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 8px;
+
+    color: #1A1F24;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Prevent background scrolling */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Mobile layout */
+@media (max-width: 840px) {
+
+    .mobile-nav-toggle {
+        display: inline-flex !important;
+    }
+
+    .nav-menu {
+        display: none !important;
+    }
+
+    .nav-actions .btn {
+        display: none !important;
+    }
+
+    .nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+
+    .mobile-drawer {
+        width: 88vw;
+        padding: 20px;
+    }
+
+    .mobile-nav-toggle {
+        width: 42px;
+        height: 42px;
+    }
+}
