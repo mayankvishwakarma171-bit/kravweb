@@ -304,7 +304,19 @@ function initMobileMenu() {
             closeMenu();
         }
     });
+    // Products dropdown accordion
+drawer.querySelectorAll('.mobile-has-dropdown > a')
+    .forEach(function (link) {
 
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const parent = link.closest('.mobile-has-dropdown');
+
+            parent.classList.toggle('open');
+        });
+
+    });
     // Set the initial accessibility state
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-controls', 'mobileDrawer');
