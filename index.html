@@ -63,27 +63,7 @@
 
     <!-- Navigation Menu -->
     <nav class="nav-menu">
-
-        <!-- Hamburger Button -->
-        <button
-            type="button"
-            class="mobile-nav-toggle"
-            aria-label="Open navigation menu"
-            aria-controls="mobileDrawer"
-            aria-expanded="false"
-        >
-            <svg width="24" height="24"
-                 viewBox="0 0 24 24"
-                 fill="none"
-                 stroke="currentColor"
-                 stroke-width="2">
-                <path d="M3 12h18M3 6h18M3 18h18"/>
-            </svg>
-        </button>
-
-    </nav>
-
-</header>
+      
   <!-- Sticky Header Navigation -->
   <header class="site-header">
     <div class="container">
@@ -169,11 +149,14 @@
     aria-controls="mobileDrawer"
     aria-expanded="false"
 >
-    <svg width="24" height="24"
-         viewBox="0 0 24 24"
-         fill="none"
-         stroke="currentColor"
-         stroke-width="2">
+    <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+    >
         <path d="M3 12h18M3 6h18M3 18h18"/>
     </svg>
 </button>
@@ -186,7 +169,12 @@
 
   <!-- Mobile Responsive Drawer Menu -->
   <div class="drawer-overlay"></div>
-  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+  <aside
+    class="mobile-drawer"
+    id="mobileDrawer"
+    aria-label="Mobile Navigation Drawer"
+    aria-hidden="true"
+>
     <div class="mobile-drawer-header">
       <a href="index.html" class="brand-logo">
         <img src="assets/images/kravionex-official-logo.png" alt="Kravionex Machinery LLP Logo" class="brand-logo-img">
@@ -929,21 +917,4 @@
 
   <script src="js/main.js"></script>
 </body>
- 
-    if (hamburger && navMenu) {
-        hamburger.addEventListener("click", function () {
-            navMenu.classList.toggle("active");
-            hamburger.classList.toggle("open");
-        });
-
-        // Optional: Close menu when clicking any nav link
-        const navLinks = navMenu.querySelectorAll("a");
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("active");
-                hamburger.classList.remove("open");
-            });
-        });
-    }
-});
 </html>
