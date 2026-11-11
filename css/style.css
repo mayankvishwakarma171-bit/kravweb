@@ -3059,3 +3059,46 @@ body.menu-open {
     font-size: 0.76rem;
   }
 }
+
+
+/* Homepage: place the snack gallery directly beneath the machine image */
+.snacks-showcase-inline {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 0 4px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--border-light);
+}
+.snacks-showcase-inline .snacks-showcase-header {
+  margin: 0 0 12px;
+  text-align: left;
+}
+.snacks-showcase-inline .snacks-showcase-header h2 {
+  margin: 0 0 4px !important;
+  font-size: 1.08rem !important;
+}
+.snacks-showcase-inline .snacks-showcase-header p {
+  font-size: 0.78rem !important;
+  line-height: 1.4;
+}
+.snacks-showcase-inline .snacks-cards-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+}
+.snacks-showcase-inline .snack-feature-card { padding: 7px; }
+.snacks-showcase-inline .snack-img-bubble {
+  height: 66px;
+  margin-bottom: 6px;
+}
+.snacks-showcase-inline .snack-card-name { font-size: 0.72rem; }
+@media (max-width: 700px) {
+  .snacks-showcase-inline .snacks-cards-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+  }
+  .snacks-showcase-inline .snack-feature-card { flex: 0 0 112px; }
+  .snacks-showcase-inline .snack-img-bubble { height: 72px; }
+}
