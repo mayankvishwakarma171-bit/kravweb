@@ -1,13 +1,54 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kravionex Machinery LLP | Food Processing & Snack Making Machinery Manufacturer</title>
-  <meta name="description" content="Kravionex manufactures snack-processing machinery in India, including SS304 batch fryers, continuous fryers, potato chips lines and turnkey namkeen plants. Enquire now.">
-  <link rel="canonical" href="https://www.kravionex.com/">
+  <meta name="description" content="Leading Indian manufacturer of industrial snack frying lines, continuous fryers, potato chips plants, sev extruders, and food processing systems. Based in Maharashtra & Gujarat, India.">
+  <meta name="keywords" content="food processing machinery manufacturer, snack making machine manufacturer, namkeen frying machine, potato chips plant manufacturer, batch fryer, continuous namkeen fryer, sev boondi line, kravionex machinery, industrial food machinery india">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://kravionex.com/">
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kravionex Machinery LLP | Food Processing & Snack Making Machinery Manufacturer">
+  <meta property="og:description" content="Leading Indian manufacturer of industrial snack frying lines, continuous fryers, potato chips plants, sev extruders, and food processing systems. Based in Maharashtra & Gujarat, India.">
+  <meta property="og:url" content="https://kravionex.com/">
+  <meta property="og:site_name" content="Kravionex Machinery LLP">
+  <meta property="og:image" content="https://kravionex.com/assets/images/logo-placeholder.svg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kravionex Machinery LLP | Food Processing & Snack Making Machinery Manufacturer">
+  <meta name="twitter:description" content="Leading Indian manufacturer of industrial snack frying lines, continuous fryers, potato chips plants, sev extruders, and food processing systems. Based in Maharashtra & Gujarat, India.">
+  <meta name="twitter:image" content="https://kravionex.com/assets/images/logo-placeholder.svg">
+
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23141C22'/><text x='50%25' y='68%25' font-family='Arial, sans-serif' font-weight='900' font-size='60' fill='%23D4A843' text-anchor='middle'>K</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kravionex Machinery LLP",
+    "url": "https://kravionex.com/",
+    "logo": "https://kravionex.com/assets/images/logo-placeholder.svg",
+    "description": "Leading Indian manufacturer of industrial snack frying lines, continuous fryers, potato chips plants, sev extruders, and food processing systems.",
+    "telephone": ["+919930985514", "+917506665188"],
+    "email": "kravionex.machinery@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vapi / Mumbai",
+      "addressRegion": "Maharashtra & Gujarat",
+      "addressCountry": "IN"
+    },
+    "hasMap": "https://maps.app.goo.gl/qcqS49icv6Lrznpw5",
+    "sameAs": [
+      "https://www.youtube.com/@kravionexmachinery",
+      "https://www.linkedin.com/in/dinesh-vishwakarma-75270a391",
+      "https://www.instagram.com/kravionexmachinellp"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -53,17 +94,7 @@
       </div>
     </div>
   </aside>
-<!-- KRAVIONEX MAIN NAVIGATION -->
-<header class="site-header">
 
-    <!-- Company Logo and Name -->
-    <div class="nav-brand">
-        <!-- KEEP YOUR EXISTING KRAVIONEX LOGO AND NAME HERE -->
-    </div>
-
-    <!-- Navigation Menu -->
-    <nav class="nav-menu">
-      
   <!-- Sticky Header Navigation -->
   <header class="site-header">
     <div class="container">
@@ -142,24 +173,7 @@
         <!-- Action CTAs -->
         <div class="nav-actions">
           <a href="#rfq-section" class="btn btn-primary btn-sm">Request Quotation</a>
-          <button
-    type="button"
-    class="mobile-nav-toggle"
-    aria-label="Open navigation menu"
-    aria-controls="mobileDrawer"
-    aria-expanded="false"
->
-    <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-    >
-        <path d="M3 12h18M3 6h18M3 18h18"/>
-    </svg>
-</button>
+          <button class="mobile-nav-toggle" onclick="openMobileNav()" aria-label="Toggle Navigation Menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
           </button>
         </div>
@@ -167,64 +181,64 @@
     </div>
   </header>
 
-  <!-- Mobile Responsive Drawer Menu -->
-  <div class="drawer-overlay"></div>
-  <aside
-    class="mobile-drawer"
-    id="mobileDrawer"
-    aria-label="Mobile Navigation Drawer"
-    aria-hidden="true"
->
+        <!-- Mobile Responsive Drawer Menu -->
+  <div class="drawer-overlay" id="drawer-overlay" onclick="closeMobileNav()"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div class="mobile-drawer-header">
-      <a href="index.html" class="brand-logo">
-        <img src="assets/images/kravionex-official-logo.png" alt="Kravionex Machinery LLP Logo" class="brand-logo-img">
-        <div class="brand-text-wrap">
-          <span class="brand-name">Kravionex</span>
-          <span class="brand-subtitle">Machinery LLP</span>
-        </div>
+      <a href="index.html" class="mobile-logo" onclick="closeMobileNav()">
+        <img src="assets/images/logo-placeholder.svg" alt="Kravionex Engineering Logo" width="140" height="38">
       </a>
-      <button class="mobile-drawer-close" aria-label="Close Mobile Menu" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">&times;</button>
+      <button class="mobile-drawer-close" onclick="closeMobileNav()" aria-label="Close Mobile Menu">&times;</button>
     </div>
-    <ul class="mobile-nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li class="mobile-has-dropdown">
-        <a href="products.html">Products <svg class="mobile-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
-        <ul class="mobile-sub-links">
-          <li><a href="products.html">🔥 Circular Batch Fryer (Pellet HE)</a></li>
-          <li><a href="products.html">🔶 Rectangular Tilting Batch Fryer</a></li>
-          <li><a href="products.html">🌀 Shell &amp; Tube Circular Fryer</a></li>
-          <li><a href="products.html">🌾 Direct-Fired Batch Fryer</a></li>
-          <li><a href="products.html">⚡ Continuous Namkeen &amp; Pellet Fryer</a></li>
-          <li><a href="products.html">🏭 Multi-Product Continuous Frying System</a></li>
-          <li><a href="products.html">🔩 Namkeen &amp; Sev Extruder</a></li>
-          <li><a href="products.html">🥔 High-Speed Potato Slicer</a></li>
-          <li><a href="products.html">🫙 Root Vegetable Peeler</a></li>
-          <li><a href="products.html">✨ Flavouring Drum</a></li>
-        </ul>
-      </li>
-      <li><a href="turnkey-lines.html">Our Projects</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-    <div style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-surface-warm); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
-      <p style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold-dark); text-transform: uppercase;">Direct Contact</p>
-      <p style="font-size: 0.85rem; margin-top: 0.25rem;">
-        <strong>Domestic Sales:</strong><br>
-        <a href="tel:+919930985514" style="color: var(--text-primary); font-weight: 600;">+91 9930985514</a>
-      </p>
-      <p style="font-size: 0.85rem; margin-top: 0.4rem;">
-        <strong>Office:</strong><br>
-        <a href="tel:+917506665188" style="color: var(--text-primary);">+91 7506665188</a> / <a href="tel:+917506665187" style="color: var(--text-primary);">+91 7506665187</a>
-      </p>
-      <p style="font-size: 0.825rem; margin-top: 0.4rem;">
-        <a href="mailto:kravionex.machinery@gmail.com" style="color: var(--accent-gold-dark);">kravionex.machinery@gmail.com</a>
-      </p>
-    </div>
-    <div style="margin-top: auto; padding-top: 1.5rem;">
-      <a href="#rfq-section" class="btn btn-primary" style="width: 100%; text-align: center;">Get Instant Quote</a>
-      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">
-        Maharashtra, India &bull; Serving Global Snack Innovators
-      </p>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" onclick="closeMobileNav()">Home</a></li>
+        
+        <li class="mobile-has-dropdown">
+          <a href="products.html" class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this); return false;">
+            <span>Products</span>
+            <svg class="mobile-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="mobile-sub-links">
+            <li><a href="products.html" style="font-weight:700;color:var(--accent-gold-dark);" onclick="closeMobileNav()">&rarr; View All Products Catalog</a></li>
+            <li><a href="circular-batch-fryer-he.html" onclick="closeMobileNav()">&bull; Circular Batch Fryer (Pellet HE)</a></li>
+            <li><a href="rectangular-batch-fryer.html" onclick="closeMobileNav()">&bull; Rectangular Tilting Batch Fryer</a></li>
+            <li><a href="continuous-fryer-pellet.html" onclick="closeMobileNav()">&bull; Continuous Namkeen Fryer</a></li>
+            <li><a href="multi-product-continuous-frying-system.html" onclick="closeMobileNav()">&bull; Multi Product Continuous Frying Line</a></li>
+            <li><a href="automatic-sev-boondi-line.html" onclick="closeMobileNav()">&bull; Automatic Sev &amp; Boondi Line</a></li>
+            <li><a href="semi-automatic-chips-line.html" onclick="closeMobileNav()">&bull; Semi-Automatic Potato Chips Line</a></li>
+            <li><a href="shell-tube-circular-fryer.html" onclick="closeMobileNav()">&bull; Shell &amp; Tube Circular Fryer</a></li>
+            <li><a href="namkeen-extruder-machine.html" onclick="closeMobileNav()">&bull; Namkeen &amp; Sev Extruder</a></li>
+            <li><a href="potato-slicer-machine.html" onclick="closeMobileNav()">&bull; High-Speed Potato Slicer</a></li>
+            <li><a href="potato-peeler-machine.html" onclick="closeMobileNav()">&bull; Industrial Potato Peeler</a></li>
+            <li><a href="flavouring-drum-machine.html" onclick="closeMobileNav()">&bull; Octagonal Flavouring Drum</a></li>
+            <li><a href="circular-batch-fryer-furnace.html" onclick="closeMobileNav()">&bull; Direct-Fired Biomass Fryer</a></li>
+          </ul>
+        </li>
+  
+        <li><a href="turnkey-lines.html" onclick="closeMobileNav()">Our Projects</a></li>
+        <li><a href="about.html" onclick="closeMobileNav()">About Us</a></li>
+        <li><a href="contact.html" onclick="closeMobileNav()">Contact Us</a></li>
+      </ul>
+      
+      <div class="mobile-drawer-cta-wrap">
+        <a href="https://wa.me/919930985514?text=Hello%20Kravionex%2C%20I%20would%20like%20to%20request%20an%20instant%20quotation%20for%20food%20processing%20machinery." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block mobile-rfq-btn">
+          Request Quotation (WhatsApp)
+        </a>
+      </div>
+
+      <div class="mobile-drawer-contact-card">
+        <p class="mobile-contact-title">Direct Sales &amp; Technical Support</p>
+        <p class="mobile-contact-item">
+          <strong>Phone:</strong> <a href="tel:+919930985514">+91 9930985514</a> / <a href="tel:+917506665188">+91 7506665188</a>
+        </p>
+        <p class="mobile-contact-item">
+          <strong>Email:</strong> <a href="mailto:kravionex.machinery@gmail.com">kravionex.machinery@gmail.com</a>
+        </p>
+        <p class="mobile-contact-item">
+          <strong>Location:</strong> Vapi, Gujarat &amp; Mumbai, India
+        </p>
+      </div>
     </div>
   </aside>
 
@@ -235,7 +249,7 @@
         <div class="hero-content">
           <div class="hero-tagline-kicker">
             <span class="dot"></span>
-            <span>Food-Processing Machinery Manufacturer:-Batch Fryer,Continuous Namkeen Fryer Machine & Complete Processing Lines  &bull; Maharashtra, India</span>
+            <span>Food-Processing Machinery Manufacturer &bull; Maharashtra, India</span>
           </div>
           <h1 class="hero-title">
             Industrial Snack & Food Processing Machinery Built for <em>Flawless Performance</em>
@@ -244,8 +258,8 @@
             "Engineering Precision. Delivering Performance."
           </span>
           <p class="hero-description">
-           Kravionex Machinery LLP is a manufacturer of industrial food processing and frying machinery based in Bhiwandi, Maharashtra, India. We specialise in stainless steel namkeen fryer machines, potato chips fryers and banana chips frying equipment, designed for reliable performance, consistent frying quality and efficient oil and fuel consumption.
-           Our product range includes circular batch fryers, rectangular batch fryers, rectangular tilting batch fryers with diesel burners, and complete batch-type potato chips processing lines. We provide practical, durable and easy-to-operate machinery solutions for small and mid-scale snack manufacturers looking to establish, upgrade or expand their production facilities. </p>
+            Kravionex Machinery LLP engineers high-yield batch fryers, continuous frying systems, potato chips lines, and automated snack processing solutions. We empower commercial snack manufacturers across India to establish, expand, and modernize production facilities with hygienic, energy-efficient engineering.
+          </p>
           <div class="hero-cta-group">
             <a href="products.html" class="btn btn-primary btn-lg">Explore Machinery Portfolio</a>
             <a href="#rfq-section" class="btn btn-secondary btn-lg">Request Plant Layout & RFQ</a>
@@ -269,26 +283,26 @@
 
         <!-- Hero Machinery Showcase Card (Enlarged & Rebalanced) -->
         <div class="hero-visual-card">
-          <!-- Floating Animated Snack Badges -->
-          <div class="floating-snack-badge badge-pos-top-right">
-            <span class="snack-icon">🍟</span>
-            <div class="snack-text">
-              <span class="snack-title">Crispy Potato Chips</span>
-              <span class="snack-sub">Uniform Color &amp; Low FFA</span>
+          <!-- Floating Animated Real Snack Badges -->
+          <div class="hero-snack-float-badge float-pos-chips" title="Crispy Potato Chips">
+            <img src="assets/images/snack-potato-chips.jpg" alt="Crispy Potato Chips" class="hero-snack-thumb">
+            <div class="hero-snack-text">
+              <span class="hero-snack-title">Crispy Potato Chips</span>
+              <span class="hero-snack-sub">Uniform Thickness &amp; Low FFA</span>
             </div>
           </div>
-          <div class="floating-snack-badge badge-pos-bottom-left">
-            <span class="snack-icon">🌀</span>
-            <div class="snack-text">
-              <span class="snack-title">Nylon Sev &amp; Bhujia</span>
-              <span class="snack-sub">Continuous Extrusion Frying</span>
+          <div class="hero-snack-float-badge float-pos-banana" title="Golden Banana Wafers">
+            <img src="assets/images/snack-banana-chips.jpg" alt="Golden Banana Chips" class="hero-snack-thumb">
+            <div class="hero-snack-text">
+              <span class="hero-snack-title">Golden Banana Wafers</span>
+              <span class="hero-snack-sub">High-Yield Batch Frying</span>
             </div>
           </div>
-          <div class="floating-snack-badge badge-pos-mid-right">
-            <span class="snack-icon">🔥</span>
-            <div class="snack-text">
-              <span class="snack-title">Multi-Fuel Compatible</span>
-              <span class="snack-sub">Pellet / Gas / Diesel / Wood</span>
+          <div class="hero-snack-float-badge float-pos-sev" title="Nylon Sev &amp; Bhujia">
+            <img src="assets/images/snack-nylon-sev.jpg" alt="Nylon Sev &amp; Bhujia" class="hero-snack-thumb">
+            <div class="hero-snack-text">
+              <span class="hero-snack-title">Nylon Sev &amp; Bhujia</span>
+              <span class="hero-snack-sub">Continuous Hydro De-oiled</span>
             </div>
           </div>
 
@@ -325,20 +339,67 @@
     </div>
   </section>
 
-  <!-- Animated Snacks Variety Banner (Economode Reference Style) -->
-  <section class="snacks-strip-section" aria-label="End Products Manufactured">
+  <!-- Dedicated Animated Real Snacks Showcase Section -->
+  <section class="snacks-showcase-section" aria-label="Snack Varieties Manufactured with Kravionex Equipment">
     <div class="container">
-      <div class="snacks-strip-inner">
-        <span class="snacks-strip-label">
-          <span>⚙️ Engineered For Premium Snacks:</span>
-        </span>
-        <span class="snack-pill-item">🍟 Potato Chips (Plain, Ridged, Kettle)</span>
-        <span class="snack-pill-item">🌀 Nylon Sev &amp; Bikaneri Bhujia</span>
-        <span class="snack-pill-item">🟡 Golden Boondi &amp; Fried Dal</span>
-        <span class="snack-pill-item">🍌 Kerala Banana Chips &amp; Wafers</span>
-        <span class="snack-pill-item">🌽 Extruded Kurkure &amp; 2D/3D Fryums</span>
-        <span class="snack-pill-item">🥜 Masala Peanuts &amp; Cashews</span>
-        <span class="snack-pill-item">✨ Coated Makhana &amp; Namkeen Mix</span>
+      <div class="snacks-showcase-header">
+        <span class="section-kicker">End-Product Excellence</span>
+        <h2 style="font-size: 2rem; margin: 0.35rem 0 0.6rem 0;">Popular Snacks Produced on Kravionex Machinery</h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
+          Our industrial processing equipment is precision-engineered for authentic texture, uniform golden color, crispness, and minimum oil absorption.
+        </p>
+      </div>
+
+      <div class="snacks-cards-grid">
+        <!-- Snack 1: Banana Chips -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-banana-chips.jpg" alt="Golden Banana Chips" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Banana Chips &amp; Wafers</h3>
+          <span class="snack-card-machine">Circular / Rectangular Batch Fryers</span>
+          <p class="snack-card-desc">Crispy golden slices fried under precise dynamic thermal regulation with external pellet heat exchangers.</p>
+        </div>
+
+        <!-- Snack 2: Potato Chips -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-potato-chips.jpg" alt="Crispy Potato Chips" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Crispy Potato Chips</h3>
+          <span class="snack-card-machine">Potato Slicer &amp; Chips Lines</span>
+          <p class="snack-card-desc">Plain, ridged, and kettle-style potato chips with micrometer thickness control and rapid oil turnover.</p>
+        </div>
+
+        <!-- Snack 3: Nylon Sev & Bhujia -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-nylon-sev.jpg" alt="Nylon Sev and Bikaneri Bhujia" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Nylon Sev &amp; Bhujia</h3>
+          <span class="snack-card-machine">Automatic Sev &amp; Boondi Line</span>
+          <p class="snack-card-desc">Delicate golden namkeen strands with continuous slurry drop head, submersing belt, and hydro de-oiling.</p>
+        </div>
+
+        <!-- Snack 4: Gathiya & Papdi -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-gathiya-bowl.png" alt="Bhavnagari Gathiya and Papdi" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Gathiya &amp; Papdi</h3>
+          <span class="snack-card-machine">Heavy-Duty Namkeen Extruder</span>
+          <p class="snack-card-desc">Traditional besan snacks extruded directly over frying pans with quick-change brass and SS multi-dies.</p>
+        </div>
+
+        <!-- Snack 5: Poha Chivda & Namkeen Mix -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-poha-chivda.jpg" alt="Poha Chivda & Namkeen Mixture" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Chivda &amp; Namkeen Mix</h3>
+          <span class="snack-card-machine">Octagonal Flavouring Drum</span>
+          <p class="snack-card-desc">Multi-ingredient roasted &amp; fried mixtures gently tumbled with seasonings for zero breakage and uniform taste.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -360,24 +421,41 @@
     </div>
   </nav>
 
-  <!-- Machinery Portfolio Section -->
-  <section class="section-spacing" id="machinery">
+    <!-- Machinery Portfolio Section - Interactive Range Slider -->
+  <section class="section-spacing machinery-slider-section" id="machinery">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="section-kicker">Precision Food-Processing Equipment</span>
-        <h2 class="section-title">Engineered for Maximum Yield, Oil Quality & Fuel Economy</h2>
-        <p class="section-lead">
-          Explore our complete range of commercial food-processing and snack-making machinery. Every unit is manufactured in Maharashtra with sanitary food-contact stainless steel, high-velocity oil circulation, and precision thermal controls.
-        </p>
+      <div class="machinery-slider-top">
+        <div style="max-width: 720px;">
+          <span class="section-kicker">Precision Food-Processing Equipment Range</span>
+          <h2 class="section-title" style="margin-bottom: 0.5rem;">Explore Our Complete Machinery Range</h2>
+          <p class="section-lead" style="margin-bottom: 0;">
+            Slide through our complete portfolio of industrial batch fryers, continuous frying lines, snack extruders, and food processing systems engineered in Maharashtra.
+          </p>
+        </div>
+        <div class="slider-ctrls">
+          <button class="slider-nav-btn" id="machinery-prev-btn" aria-label="Previous Machine Slide" title="Previous Machine">
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          <span class="slider-page-indicator" id="machinery-slider-counter">1 / 12</span>
+          <button class="slider-nav-btn" id="machinery-next-btn" aria-label="Next Machine Slide" title="Next Machine">
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
+        </div>
       </div>
 
-      <!-- Machinery Cards Grid -->
-      <div class="machinery-grid">
-        <!-- Rendered dynamically by js/main.js from KRAVIONEX_MACHINERY -->
+      <!-- Machinery Slider Track (Populated by js/main.js with all 12 machines) -->
+      <div class="machinery-slider-wrapper">
+        <div class="machinery-slider-track" id="machinery-slider-track">
+          <!-- Rendered dynamically by js/main.js from KRAVIONEX_MACHINERY -->
+        </div>
       </div>
 
-      <div style="text-align: center; margin-top: 3.5rem;">
+      <!-- Interactive Slide Navigation Dots -->
+      <div class="slider-dots-container" id="machinery-slider-dots"></div>
+
+      <div style="text-align: center; margin-top: 2.75rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <a href="products.html" class="btn btn-primary btn-lg">Browse Full Technical Specifications Catalog</a>
+        <a href="#rfq-section" class="btn btn-outline-dark btn-lg">Request Custom Plant Quotation</a>
       </div>
     </div>
   </section>
