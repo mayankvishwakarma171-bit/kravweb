@@ -2949,3 +2949,108 @@ body.menu-open {
         height: 42px;
     }
 }
+
+/* =========================================
+   KRAVIONEX - HORIZONTAL SNACK SHOWCASE
+   ========================================= */
+
+.snacks-showcase-section {
+    padding: 55px 0;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.snacks-showcase-header {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 30px;
+}
+
+.snacks-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.snack-feature-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 16px 12px;
+    text-align: center;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+    min-width: 0;
+}
+
+.snack-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-gold);
+}
+
+.snack-img-bubble {
+    width: 115px;
+    height: 115px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--bg-surface-warm);
+    border: 2px solid var(--border-light);
+}
+
+.snack-img-bubble img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.snack-card-name {
+    font-size: 0.95rem;
+    margin-bottom: 7px;
+    line-height: 1.35;
+}
+
+.snack-card-machine {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-gold-dark);
+    margin-bottom: 8px;
+}
+
+.snack-card-desc {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .snacks-cards-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .snacks-showcase-section {
+        padding: 35px 0;
+    }
+
+    .snacks-cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .snack-img-bubble {
+        width: 95px;
+        height: 95px;
+    }
+
+    .snack-feature-card {
+        padding: 12px 8px;
+    }
+}
