@@ -2739,4 +2739,22 @@ body.menu-open {
         padding: 1.5rem 1.25rem;
     }
 }
+/* Show hamburger on desktop and mobile */
+.mobile-nav-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 3100;
+}
 
+/* Closed drawer remains hidden */
+.mobile-drawer {
+    visibility: hidden;
+}
+
+/* Open drawer becomes visible */
+.mobile-drawer.is-open {
+    visibility: visible;
+}
