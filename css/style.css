@@ -2644,3 +2644,99 @@ button, input, select, textarea {
     }
 }
 
+/* =========================================
+   KRAVIONEX - FIXED RESPONSIVE NAVIGATION
+   ========================================= */
+
+/* Keep the navigation container available */
+@media (max-width: 840px) {
+
+    .nav-menu {
+        display: flex !important;
+        align-items: center;
+        gap: 0;
+    }
+
+    /* Hide desktop navigation links */
+    .nav-menu > ul {
+        display: none !important;
+    }
+
+    /* Hide desktop quotation button on mobile */
+    .nav-actions .btn {
+        display: none !important;
+    }
+
+    /* Show hamburger button */
+    .mobile-nav-toggle {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        padding: 10px;
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        background: #FFFFFF;
+        color: var(--text-primary);
+        cursor: pointer;
+        position: relative;
+        z-index: 3100;
+    }
+}
+
+/* Drawer open state */
+.mobile-drawer.is-open {
+    right: 0 !important;
+    visibility: visible;
+}
+
+/* Overlay open state */
+.drawer-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Prevent background scrolling */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Keep the drawer above the overlay */
+.mobile-drawer {
+    z-index: 3200;
+    overflow-y: auto;
+    visibility: visible;
+}
+
+.drawer-overlay {
+    z-index: 3100;
+    cursor: pointer;
+}
+
+/* Smooth opening animation */
+.mobile-drawer {
+    transition: right 0.3s ease, visibility 0.3s ease;
+}
+
+/* Better button interaction */
+.mobile-nav-toggle:hover {
+    background: var(--bg-surface-warm);
+    border-color: var(--accent-gold);
+}
+
+.mobile-nav-toggle svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* Mobile drawer dimensions */
+@media (max-width: 480px) {
+    .mobile-drawer {
+        width: 88vw;
+        max-width: 380px;
+        padding: 1.5rem 1.25rem;
+    }
+}
+
