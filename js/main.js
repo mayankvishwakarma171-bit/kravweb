@@ -324,16 +324,40 @@ drawer.querySelectorAll('.mobile-has-dropdown > a')
     drawer.setAttribute('aria-hidden', 'true');
 }
 
-// Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
-  initStickyHeader();
-  initMobileMenu();
-  initMegaMenu();
-  initMobileDropdowns();
-  initCategoryFilters();
-  initMachineryCards();
-  initModalSystem();
-  initRfqForm();
+
+    if (typeof initStickyHeader === 'function') {
+        initStickyHeader();
+    }
+
+    if (typeof initMobileMenu === 'function') {
+        initMobileMenu();
+    }
+
+    if (typeof initMegaMenu === 'function') {
+        initMegaMenu();
+    }
+
+    if (typeof initMobileDropdowns === 'function') {
+        initMobileDropdowns();
+    }
+
+    if (typeof initCategoryFilters === 'function') {
+        initCategoryFilters();
+    }
+
+    if (typeof initMachineryCards === 'function') {
+        initMachineryCards();
+    }
+
+    if (typeof initModalSystem === 'function') {
+        initModalSystem();
+    }
+
+    if (typeof initRfqForm === 'function') {
+        initRfqForm();
+    }
+
 });
 
 // Sticky Header & Scroll Effects
