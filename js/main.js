@@ -241,136 +241,19 @@ const KRAVIONEX_MACHINERY = [
   }
 ];
 
-// =============================================
-// KRAVIONEX RESPONSIVE MOBILE NAVIGATION
-// =============================================
-
-function initMobileMenu() {
-    const menuButton = document.querySelector('.mobile-nav-toggle');
-    const drawer = document.querySelector('.mobile-drawer');
-    const overlay = document.querySelector('.drawer-overlay');
-    const closeButton = document.querySelector('.mobile-drawer-close');
-
-    // Stop safely if this page does not contain the menu
-    if (!menuButton || !drawer || !overlay) {
-        return;
-    }
-
-    function openMenu() {
-        drawer.classList.add('is-open');
-        overlay.classList.add('is-open');
-        document.body.classList.add('menu-open');
-
-        menuButton.setAttribute('aria-expanded', 'true');
-        drawer.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeMenu() {
-        drawer.classList.remove('is-open');
-        overlay.classList.remove('is-open');
-        document.body.classList.remove('menu-open');
-
-        menuButton.setAttribute('aria-expanded', 'false');
-        drawer.setAttribute('aria-hidden', 'true');
-    }
-
-    // Open and close using the hamburger button
-    menuButton.addEventListener('click', function () {
-        const isOpen = drawer.classList.contains('is-open');
-
-        if (isOpen) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
-    });
-
-    // Close using the X button
-    if (closeButton) {
-        closeButton.addEventListener('click', closeMenu);
-    }
-
-    // Close when the background overlay is clicked
-    overlay.addEventListener('click', closeMenu);
-
-   // Close after selecting normal navigation links.
-// Do not close when clicking the Products dropdown.
-
-drawer.querySelectorAll('a').forEach(function (link) {
-
-    if (
-        link.parentElement.classList.contains('mobile-has-dropdown')
-    ) {
-        return;
-    }
-
-    link.addEventListener('click', closeMenu);
-
-});
-
-    // Close using Escape key
-    document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-            closeMenu();
-        }
-    });
-    // Products dropdown accordion
-drawer.querySelectorAll('.mobile-has-dropdown > a')
-    .forEach(function (link) {
-
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            const parent = link.closest('.mobile-has-dropdown');
-
-            parent.classList.toggle('open');
-        });
-
-    });
-    // Set the initial accessibility state
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-controls', 'mobileDrawer');
-    drawer.setAttribute('id', 'mobileDrawer');
-    drawer.setAttribute('aria-hidden', 'true');
-}
-
+// Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
-
-    if (typeof initStickyHeader === 'function') {
-        initStickyHeader();
-    }
-
-    if (typeof initMobileMenu === 'function') {
-        initMobileMenu();
-    }
-
-    if (typeof initMegaMenu === 'function') {
-        initMegaMenu();
-    }
-
-    if (typeof initMobileDropdowns === 'function') {
-        initMobileDropdowns();
-    }
-
-    if (typeof initCategoryFilters === 'function') {
-        initCategoryFilters();
-    }
-
-    if (typeof initMachineryCards === 'function') {
-        initMachineryCards();
-    }
-
-    if (typeof initModalSystem === 'function') {
-        initModalSystem();
-    }
-
-    if (typeof initRfqForm === 'function') {
-        initRfqForm();
-    }
-
+  initStickyHeader();
+  initMobileMenu();
+  initMegaMenu();
+  initMobileDropdowns();
+  initCategoryFilters();
+  initMachineryCards();
+  initModalSystem();
+  initRfqForm();
 });
 
-// Sticky Header & Scroll Effects
+// 1. Sticky Header & Scroll Effects
 function initStickyHeader() {
   const header = document.querySelector('.site-header');
   if (!header) return;
@@ -382,6 +265,413 @@ function initStickyHeader() {
       header.classList.remove('scrolled');
     }
   });
+}
+
+// Global Mobile Navigation Functions (Guaranteed access from inline onclick & touch events)
+window.openMobileNav = function() {
+  const drawer = document.getElementById('mobile-drawer') || document.querySelector('.mobile-drawer');
+  const overlay = document.getElementById('drawer-overlay') || document.querySelector('.drawer-overlay');
+  if (drawer) {
+    drawer.classList.add('open');
+    drawer.style.right = '0';
+  }
+  if (overlay) {
+    overlay.classList.add('active');
+    overlay.style.display = 'block';
+    overlay.style.opacity = '1';
+    overlay.style.pointerEvents = 'auto';
+  }
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeMobileNav = function() {
+  const drawer = document.getElementById('mobile-drawer') || document.querySelector('.mobile-drawer');
+  const overlay = document.getElementById('drawer-overlay') || document.querySelector('.drawer-overlay');
+  if (drawer) {
+    drawer.classList.remove('open');
+    drawer.style.right = '';
+  }
+  if (overlay) {
+    overlay.classList.remove('active');
+    overlay.style.display = '';
+    overlay.style.opacity = '';
+    overlay.style.pointerEvents = '';
+  }
+  document.documentElement.style.overflow = '';
+  document.body.style.overflow = '';
+};
+
+window.toggleMobileDropdown = function(btn) {
+  const item = btn ? btn.closest('.mobile-has-dropdown') : document.querySelector('.mobile-has-dropdown');
+  if (item) {
+    item.classList.toggle('open');
+  }
+};
+
+// 2. Mobile Menu Navigation Initializer
+function initMobileMenu() {
+  const toggleBtns = document.querySelectorAll('.mobile-nav-toggle');
+  const closeBtns = document.querySelectorAll('.mobile-drawer-close');
+  const overlay = document.getElementById('drawer-overlay') || document.querySelector('.drawer-overlay');
+
+  const openHandler = function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (e && e.stopPropagation) e.stopPropagation();
+    window.openMobileNav();
+  };
+
+  const closeHandler = function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (e && e.stopPropagation) e.stopPropagation();
+    window.closeMobileNav();
+  };
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', openHandler);
+    btn.addEventListener('touchstart', openHandler, { passive: false });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', closeHandler);
+    btn.addEventListener('touchstart', closeHandler, { passive: false });
+  });
+
+  if (overlay) {
+    overlay.addEventListener('click', closeHandler);
+    overlay.addEventListener('touchstart', closeHandler, { passive: false });
+  }
+
+  // Close when clicking links inside drawer (excluding dropdown triggers)
+  document.querySelectorAll('.mobile-nav-links a:not(.mobile-dropdown-toggle)').forEach(link => {
+    link.addEventListener('click', () => {
+      window.closeMobileNav();
+    });
+  });
+}
+
+// 3. Desktop Products Mega-Menu
+function initMegaMenu() {
+  const dropdownItems = document.querySelectorAll('.nav-has-dropdown');
+  if (!dropdownItems.length) return;
+
+  dropdownItems.forEach(item => {
+    let closeTimer = null;
+
+    item.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+      item.classList.add('open');
+    });
+
+    item.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => {
+        item.classList.remove('open');
+      }, 120);
+    });
+
+    const trigger = item.querySelector('.nav-link-dropdown');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        const isCaret = e.target.closest('.caret');
+        if (isCaret) {
+          e.preventDefault();
+          e.stopPropagation();
+          item.classList.toggle('open');
+        }
+      });
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-has-dropdown')) {
+      dropdownItems.forEach(item => item.classList.remove('open'));
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdownItems.forEach(item => item.classList.remove('open'));
+    }
+  });
+}
+
+// 4. Mobile Menu Dropdown Accordion
+function initMobileDropdowns() {
+  document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = toggle.closest('.mobile-has-dropdown');
+      if (parent) {
+        parent.classList.toggle('open');
+      }
+    });
+  });
+}
+// Category Label Helper
+function getCategoryLabel(cat) {
+  const map = {
+    'batch': 'Batch Frying System',
+    'continuous': 'Continuous Frying Line',
+    'turnkey': 'Turnkey Production Line',
+    'extrusion': 'Namkeen & Extrusion',
+    'prep': 'Preparation & Seasoning'
+  };
+  return map[cat] || 'Industrial Machinery';
+}
+
+// 5. Render Machinery Cards & Interactive Range Slider
+function initMachineryCards() {
+  // A. Render Home Page Showcase Slider
+  const sliderTrack = document.getElementById('machinery-slider-track');
+  if (sliderTrack) {
+    sliderTrack.innerHTML = '';
+    KRAVIONEX_MACHINERY.forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'slider-machine-card';
+      card.setAttribute('data-category', m.category);
+      card.innerHTML = `
+        <div class="slider-machine-image">
+          <span class="slider-machine-badge">${m.badge || 'Industrial Precision'}</span>
+          <img src="${m.image}" alt="${m.title}" loading="lazy">
+        </div>
+        <div class="slider-machine-body">
+          <div class="slider-machine-category">${getCategoryLabel(m.category)}</div>
+          <h3 class="slider-machine-title">${m.title}</h3>
+          
+          <div class="slider-specs-box">
+            <div class="slider-specs-row">
+              <span class="label">Capacity</span>
+              <span class="val">${m.capacity}</span>
+            </div>
+            <div class="slider-specs-row">
+              <span class="label">Heating / Fuel</span>
+              <span class="val" style="color: var(--accent-gold-dark);">${m.fuel}</span>
+            </div>
+          </div>
+
+          <p class="slider-machine-desc">${m.summary}</p>
+
+          <div class="slider-machine-actions">
+            <a href="${m.pageUrl}" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.88rem; padding: 0.65rem 1rem;">
+              Explore Full Specifications &rarr;
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=919930985514&text=Hello%20Kravionex%2C%20I%20would%20like%20to%20request%20a%20quotation%20for%20the%20${encodeURIComponent(m.title)}." target="_blank" class="btn btn-outline-dark" style="width: 100%; justify-content: center; font-size: 0.85rem; padding: 0.55rem 1rem; border-color: #25D366; color: #25D366; font-weight: 700;">
+              <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;margin-right:6px;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.023-.474-1.616-.669-2.656-2.316-2.736-2.423-.079-.107-.648-.863-.648-1.646 0-.783.407-1.168.552-1.328.144-.16.315-.2.42-.2.106 0 .212.001.304.006.098.005.228-.037.357.273.131.312.447 1.092.486 1.172.04.08.066.174.013.28-.053.107-.079.174-.158.267-.08.093-.168.207-.24.278-.08.08-.163.167-.07.327.093.16.413.682.886 1.103.61.543 1.123.711 1.283.791.16.08.253.067.346-.04.094-.107.4-.467.507-.627.106-.16.213-.133.359-.08.147.053.931.44 1.091.52.16.08.267.12.306.187.04.066.04.386-.104.791zM12 2C6.477 2 2 6.477 2 12c0 1.891.526 3.662 1.441 5.176L2 22l4.981-1.397C8.423 21.493 10.154 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+              Quick WhatsApp RFQ
+            </a>
+          </div>
+        </div>
+      `;
+      sliderTrack.appendChild(card);
+    });
+
+    setupMachinerySliderEvents(sliderTrack);
+  }
+
+  // B. Render Products.html Catalog Grid
+  const productsGrid = document.querySelector('section .machinery-grid');
+  if (productsGrid && productsGrid.children.length === 0) {
+    productsGrid.innerHTML = '';
+    KRAVIONEX_MACHINERY.forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'machine-card';
+      card.setAttribute('data-category', m.category);
+      card.innerHTML = `
+        <div class="machine-card-image">
+          <span class="machine-badge">${m.badge || 'Engineered in Maharashtra'}</span>
+          <img src="${m.image}" alt="${m.title}" loading="lazy">
+        </div>
+        <div class="machine-card-body">
+          <div class="machine-category-name">${getCategoryLabel(m.category)}</div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 0 0 0.5rem;">${m.title}</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">${m.summary}</p>
+          <div style="background: var(--bg-surface-warm); padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.8rem; margin-bottom: 1rem;">
+            <div><strong>Capacity:</strong> ${m.capacity}</div>
+            <div style="margin-top: 2px;"><strong>Fuel:</strong> <span style="color: var(--accent-gold-dark);">${m.fuel}</span></div>
+          </div>
+          <div class="machine-card-footer" style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="${m.pageUrl}" class="btn btn-primary btn-sm" style="flex: 1; justify-content: center;">Full Details &rarr;</a>
+            <a href="https://api.whatsapp.com/send?phone=919930985514&text=Hello%20Kravionex%2C%20I%20want%20a%20quotation%20for%20${encodeURIComponent(m.title)}" target="_blank" class="btn btn-outline-dark btn-sm" style="border-color: #25D366; color: #25D366;">WhatsApp</a>
+          </div>
+        </div>
+      `;
+      productsGrid.appendChild(card);
+    });
+  }
+}
+
+// 6. Interactive Machinery Slider Navigation Engine
+function setupMachinerySliderEvents(track) {
+  const prevBtn = document.getElementById('machinery-prev-btn');
+  const nextBtn = document.getElementById('machinery-next-btn');
+  const counterEl = document.getElementById('machinery-slider-counter');
+  const dotsContainer = document.getElementById('machinery-slider-dots');
+  const cards = track.querySelectorAll('.slider-machine-card');
+  const totalCards = cards.length;
+
+  if (!totalCards) return;
+
+  // Generate Navigation Dots
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    cards.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot-btn' + (idx === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+      dot.addEventListener('click', () => {
+        scrollToSlideIndex(idx);
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function getCardWidth() {
+    const card = cards[0];
+    const gap = 24; // 1.5rem
+    return card ? card.offsetWidth + gap : 340;
+  }
+
+  function getCurrentIndex() {
+    const scrollLeft = track.scrollLeft;
+    const cardWidth = getCardWidth();
+    return Math.min(Math.round(scrollLeft / cardWidth), totalCards - 1);
+  }
+
+  function scrollToSlideIndex(idx) {
+    const cardWidth = getCardWidth();
+    track.scrollTo({
+      left: idx * cardWidth,
+      behavior: 'smooth'
+    });
+  }
+
+  function updateSliderStatus() {
+    const activeIdx = getCurrentIndex();
+    if (counterEl) {
+      counterEl.textContent = `${activeIdx + 1} / ${totalCards}`;
+    }
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll('.slider-dot-btn');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIdx);
+      });
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const curr = getCurrentIndex();
+      const target = curr > 0 ? curr - 1 : totalCards - 1;
+      scrollToSlideIndex(target);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const curr = getCurrentIndex();
+      const target = curr < totalCards - 1 ? curr + 1 : 0;
+      scrollToSlideIndex(target);
+    });
+  }
+
+  // Scroll listener for counter & dots
+  let scrollTimeout = null;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(updateSliderStatus, 50);
+  }, { passive: true });
+
+  // Optional subtle auto-sliding (pauses on hover)
+  let autoSlideTimer = null;
+  const startAutoSlide = () => {
+    stopAutoSlide();
+    autoSlideTimer = setInterval(() => {
+      const curr = getCurrentIndex();
+      const nextIdx = (curr + 1) % totalCards;
+      scrollToSlideIndex(nextIdx);
+    }, 6000);
+  };
+  const stopAutoSlide = () => {
+    if (autoSlideTimer) clearInterval(autoSlideTimer);
+  };
+
+  track.addEventListener('mouseenter', stopAutoSlide);
+  track.addEventListener('mouseleave', startAutoSlide);
+  track.addEventListener('touchstart', stopAutoSlide, { passive: true });
+  startAutoSlide();
+}
+
+// 7. Category Filter System
+function initCategoryFilters() {
+  const pills = document.querySelectorAll('.category-pill');
+  if (!pills.length) return;
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const filter = pill.getAttribute('data-filter');
+
+      // Filter on slider track (Home page)
+      const sliderTrack = document.getElementById('machinery-slider-track');
+      if (sliderTrack) {
+        const sliderCards = sliderTrack.querySelectorAll('.slider-machine-card');
+        sliderCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        sliderTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+
+      // Filter on products.html grid
+      const gridCards = document.querySelectorAll('.machinery-grid .machine-card');
+      gridCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+// 8. Modal System
+function initModalSystem() {
+  const modal = document.getElementById('machine-modal');
+  if (!modal) return;
+  
+  const closeBtn = modal.querySelector('.modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => closeModal());
+  }
+  
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+}
+
+function closeModal() {
+  const modal = document.getElementById('machine-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 }
 
 // =============================================
@@ -479,7 +769,7 @@ function renderRFQNotification(form, name, company, equipment, phone, whatsappUr
         '<h4 style="color: #6EE7B7; margin: 0; font-family: var(--font-sans); font-size: 1.05rem;">' +
           'Enquiry Dispatched to Domestic Sales Desk (+91 9930985514)' +
         '</h4>' +
-      '</div>' +
+      </div>' +
       '<p style="font-size: 0.9rem; color: #E2E8F0; line-height: 1.6; margin-bottom: 0.85rem;">' +
         'Thank you, <strong>' + name + '</strong>' + (company ? ' (' + company + ')' : '') + '. Your specifications for <strong>' + equipment + '</strong> have been formatted for our WhatsApp sales desk.' +
       '</p>' +

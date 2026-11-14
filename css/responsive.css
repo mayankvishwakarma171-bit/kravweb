@@ -1,0 +1,658 @@
+/* ===================================================================
+   KRAVIONEX MACHINERY LLP - RESPONSIVE & MOBILE ENGINE (v2.0)
+   Zero horizontal overflow, 100% mobile-device compatibility
+   =================================================================== */
+
+/* Prevent horizontal viewport overflow while maintaining sticky headers */
+html {
+  overflow-x: clip;
+  max-width: 100vw;
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
+}
+
+/* Ensure all major sections and containers remain within viewport boundaries */
+.container,
+.site-header,
+.site-footer,
+section,
+main,
+article,
+aside {
+  max-width: 100%;
+}
+
+/* Universal text wrapping to prevent technical terms from pushing screen boundaries */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-title,
+.machine-page-title,
+.brand-name,
+p, span, a, li, td, th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Responsive Buttons: prevent nowrap from blowing out mobile phone screens */
+.btn {
+  max-width: 100%;
+  white-space: normal;
+  word-break: normal;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .hero-cta-group,
+  div[style*="display: flex"][style*="gap"] {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.25rem;
+  }
+}
+
+/* Top bar hiding on tablets & phones to avoid contact text overflow */
+@media (max-width: 900px) {
+  .top-bar {
+    display: none !important;
+  }
+}
+
+/* Header & Mobile Toggle Responsiveness */
+@media (max-width: 1024px) {
+  .site-header {
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  .nav-wrapper {
+    width: 100%;
+    height: 68px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .brand-logo {
+    gap: 0.6rem;
+    max-width: calc(100% - 55px);
+  }
+  
+  .brand-logo-img {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    flex-shrink: 0;
+  }
+  
+  .brand-name {
+    font-size: 1.15rem;
+    line-height: 1.1;
+  }
+  
+  .brand-subtitle {
+    font-size: 0.65rem;
+  }
+  
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+  }
+  
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(197, 161, 91, 0.12);
+    border: 1.5px solid rgba(197, 161, 91, 0.4);
+    color: var(--text-primary);
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 1005;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand-name {
+    font-size: 1.02rem;
+  }
+  .brand-subtitle {
+    font-size: 0.6rem;
+  }
+}
+
+/* Hero Section Mobile Polish */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0 3rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+    line-height: 1.22;
+  }
+
+  .hero-tagline-display {
+    font-size: 0.95rem;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-visual-card {
+    padding: 1rem;
+    margin-top: 1rem;
+    overflow: hidden;
+  }
+
+  .hero-visual-card::after {
+    display: none !important;
+  }
+
+  .hero-image-wrap {
+    min-height: 240px;
+    height: auto;
+    aspect-ratio: 4/3;
+  }
+
+  .hero-visual-specs-mini {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .hero-trust-metrics {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Machinery Slider Section Mobile Optimization */
+.machinery-slider-section {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.machinery-slider-wrapper {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.machinery-slider-track {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1.5rem;
+}
+
+@media (max-width: 680px) {
+  .slider-machine-card {
+    flex: 0 0 85vw !important;
+    min-width: 0 !important;
+    max-width: 320px !important;
+  }
+  
+  .machinery-slider-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .slider-ctrls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* Turnkey Section & Flow Steps Mobile Optimization */
+.turnkey-section {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.turnkey-showcase-box {
+  max-width: 100%;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  overflow: hidden;
+}
+
+.turnkey-flow-steps {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .turnkey-flow-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    overflow-x: visible;
+  }
+
+  .flow-step-item {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* About Intro & Manufacturing Pillars Mobile Optimization */
+@media (max-width: 840px) {
+  .about-intro-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .calc-metrics-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .calc-range-wrap {
+    width: 100%;
+  }
+
+  .calc-range {
+    min-width: 0;
+    flex: 1;
+  }
+}
+
+/* ===================================================================
+   STANDALONE MACHINE PAGES (12 Product Detail Pages) RESPONSIVE ENGINE
+   =================================================================== */
+.machine-page-hero {
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+  background: linear-gradient(180deg, var(--bg-surface-warm) 0%, #FFFFFF 100%);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.machine-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.75rem, 3.5vw, 3.5rem);
+  align-items: center;
+}
+
+.machine-visual-card {
+  background: radial-gradient(circle at center, #FFFFFF 0%, #FAF8F2 100%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.machine-visual-card img {
+  max-height: 420px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.12));
+  transition: transform var(--transition-slow);
+}
+
+.fuel-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(197, 161, 91, 0.15);
+  color: var(--accent-gold-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-top: 1rem;
+}
+
+.badge-label {
+  display: inline-block;
+  background: var(--accent-gold-soft);
+  color: var(--accent-gold-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.65rem;
+}
+
+.machine-page-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.22;
+  margin-bottom: 0.85rem;
+}
+
+.machine-summary-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent-gold-dark);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.machine-overview-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.snack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.snack-pill {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+/* Features Section */
+.features-section {
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+  background: var(--bg-surface-warm);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+}
+
+.feature-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.feature-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Specs Section & Tables */
+.specs-section {
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.spec-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  text-align: left;
+  line-height: 1.5;
+}
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-table th {
+  background: var(--bg-surface-warm);
+  color: var(--text-primary);
+  font-weight: 700;
+  width: 32%;
+}
+
+.spec-table td {
+  color: var(--text-secondary);
+}
+
+.spec-table tr:hover td {
+  background: rgba(197, 161, 91, 0.04);
+}
+
+@media (max-width: 900px) {
+  .machine-page-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-table {
+    min-width: 300px;
+    font-size: 0.85rem;
+  }
+
+  .spec-table th,
+  .spec-table td {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .spec-table th {
+    width: 38%;
+  }
+}
+
+/* ===================================================================
+   OUR TRUSTED CLIENTS SHOWCASE SECTION
+   =================================================================== */
+.trusted-clients-section {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: clamp(3rem, 6vw, 4.75rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.trusted-clients-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem) auto;
+}
+
+.clients-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.client-trust-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(20, 28, 34, 0.04);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+}
+
+.client-trust-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 14px 32px rgba(197, 161, 91, 0.2);
+}
+
+.client-company-name {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.85rem 0;
+  line-height: 1.3;
+  min-height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo-box {
+  width: 100%;
+  aspect-ratio: 16/10;
+  max-height: 90px;
+  background: #FCFBF7;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+}
+
+.client-logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.client-trust-card:hover .client-logo-box img {
+  transform: scale(1.08);
+}
+
+.client-specialty-tag {
+  display: inline-block;
+  background: rgba(197, 161, 91, 0.12);
+  color: var(--accent-gold-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 1180px) {
+  .clients-showcase-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .clients-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .client-trust-card {
+    padding: 1rem 0.75rem;
+  }
+
+  .client-company-name {
+    font-size: 0.95rem;
+    min-height: 2.4rem;
+  }
+
+  .client-logo-box {
+    max-height: 75px;
+    padding: 0.4rem;
+  }
+
+  .client-specialty-tag {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .clients-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
