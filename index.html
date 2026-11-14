@@ -15,23 +15,27 @@
   <meta property="og:description" content="Leading Indian manufacturer of industrial snack frying lines, continuous fryers, potato chips plants, sev extruders, and food processing systems. Based in Maharashtra & Gujarat, India.">
   <meta property="og:url" content="https://kravionex.com/">
   <meta property="og:site_name" content="Kravionex Machinery LLP">
-  <meta property="og:image" content="https://kravionex.com/assets/images/logo-placeholder.svg">
+  <meta property="og:image" content="https://kravionex.com/assets/images/kravionex-official-logo.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kravionex Machinery LLP | Food Processing & Snack Making Machinery Manufacturer">
   <meta name="twitter:description" content="Leading Indian manufacturer of industrial snack frying lines, continuous fryers, potato chips plants, sev extruders, and food processing systems. Based in Maharashtra & Gujarat, India.">
-  <meta name="twitter:image" content="https://kravionex.com/assets/images/logo-placeholder.svg">
+  <meta name="twitter:image" content="https://kravionex.com/assets/images/kravionex-official-logo.png">
 
-  <link rel="stylesheet" href="css/style.css?v=20261111-snack-strip-4">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23141C22'/><text x='50%25' y='68%25' font-family='Arial, sans-serif' font-weight='900' font-size='60' fill='%23D4A843' text-anchor='middle'>K</text></svg>">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Kravionex Machinery LLP",
     "url": "https://kravionex.com/",
-    "logo": "https://kravionex.com/assets/images/logo-placeholder.svg",
+    "logo": "https://kravionex.com/assets/images/kravionex-official-logo.png",
     "description": "Leading Indian manufacturer of industrial snack frying lines, continuous fryers, potato chips plants, sev extruders, and food processing systems.",
     "telephone": ["+919930985514", "+917506665188"],
     "email": "kravionex.machinery@gmail.com",
@@ -166,6 +170,7 @@
             </div>
           </li>
           <li><a href="turnkey-lines.html" class="nav-link">Our Projects</a></li>
+          <li><a href="#clients" class="nav-link">Our Clients</a></li>
           <li><a href="about.html" class="nav-link">About Us</a></li>
           <li><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
@@ -181,12 +186,16 @@
     </div>
   </header>
 
-        <!-- Mobile Responsive Drawer Menu -->
+  <!-- Mobile Responsive Drawer Menu -->
   <div class="drawer-overlay" id="drawer-overlay" onclick="closeMobileNav()"></div>
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div class="mobile-drawer-header">
-      <a href="index.html" class="mobile-logo" onclick="closeMobileNav()">
-        <img src="assets/images/logo-placeholder.svg" alt="Kravionex Engineering Logo" width="140" height="38">
+      <a href="index.html" class="mobile-logo" onclick="closeMobileNav()" style="display:flex; align-items:center; gap:0.65rem; text-decoration:none;">
+        <img src="assets/images/kravionex-official-logo.png" alt="Kravionex Machinery LLP" style="height:42px; width:42px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+        <div style="display:flex; flex-direction:column;">
+          <span style="font-family:var(--font-serif); font-weight:700; font-size:1.15rem; color:var(--text-primary); line-height:1.1;">Kravionex</span>
+          <span style="font-size:0.65rem; font-weight:700; letter-spacing:0.12em; color:var(--accent-gold-dark); text-transform:uppercase;">Machinery LLP</span>
+        </div>
       </a>
       <button class="mobile-drawer-close" onclick="closeMobileNav()" aria-label="Close Mobile Menu">&times;</button>
     </div>
@@ -217,6 +226,7 @@
         </li>
   
         <li><a href="turnkey-lines.html" onclick="closeMobileNav()">Our Projects</a></li>
+        <li><a href="#clients" onclick="closeMobileNav()">Our Clients</a></li>
         <li><a href="about.html" onclick="closeMobileNav()">About Us</a></li>
         <li><a href="contact.html" onclick="closeMobileNav()">Contact Us</a></li>
       </ul>
@@ -281,8 +291,31 @@
           </div>
         </div>
 
-      
-          <div class="hero-visual">
+        <!-- Hero Machinery Showcase Card (Enlarged & Rebalanced) -->
+        <div class="hero-visual-card">
+          <!-- Floating Animated Real Snack Badges -->
+          <div class="hero-snack-float-badge float-pos-chips" title="Crispy Potato Chips">
+            <img src="assets/images/snack-potato-chips.jpg" alt="Crispy Potato Chips" class="hero-snack-thumb">
+            <div class="hero-snack-text">
+              <span class="hero-snack-title">Crispy Potato Chips</span>
+              <span class="hero-snack-sub">Uniform Thickness &amp; Low FFA</span>
+            </div>
+          </div>
+          <div class="hero-snack-float-badge float-pos-banana" title="Golden Banana Wafers">
+            <img src="assets/images/snack-banana-chips.jpg" alt="Golden Banana Chips" class="hero-snack-thumb">
+            <div class="hero-snack-text">
+              <span class="hero-snack-title">Golden Banana Wafers</span>
+              <span class="hero-snack-sub">High-Yield Batch Frying</span>
+            </div>
+          </div>
+          <div class="hero-snack-float-badge float-pos-sev" title="Nylon Sev &amp; Bhujia">
+            <img src="assets/images/snack-nylon-sev.jpg" alt="Nylon Sev &amp; Bhujia" class="hero-snack-thumb">
+            <div class="hero-snack-text">
+              <span class="hero-snack-title">Nylon Sev &amp; Bhujia</span>
+              <span class="hero-snack-sub">Continuous Hydro De-oiled</span>
+            </div>
+          </div>
+
           <div class="hero-visual-header">
             <div>
               <span class="hero-visual-tag">Flagship Engineering</span>
@@ -293,7 +326,6 @@
           <div class="hero-image-wrap">
             <img src="assets/images/continuous-fryer-boiler.png" alt="Kravionex Multi Product Continuous Frying System" fetchpriority="high">
           </div>
-            </section>
           <div class="hero-visual-specs-mini">
             <div class="spec-mini-item">
               <span>Heating &amp; Fuel</span>
@@ -312,6 +344,71 @@
             <span style="font-size: 0.8rem; color: var(--text-muted);">Applications: Sev, Bhujia, Boondi, Chips, Pellets</span>
             <a href="multi-product-continuous-frying-system.html" class="btn btn-outline-gold btn-sm">Inspect Line &rarr;</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedicated Animated Real Snacks Showcase Section -->
+  <section class="snacks-showcase-section" aria-label="Snack Varieties Manufactured with Kravionex Equipment">
+    <div class="container">
+      <div class="snacks-showcase-header">
+        <span class="section-kicker">End-Product Excellence</span>
+        <h2 style="font-size: 2rem; margin: 0.35rem 0 0.6rem 0;">Popular Snacks Produced on Kravionex Machinery</h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
+          Our industrial processing equipment is precision-engineered for authentic texture, uniform golden color, crispness, and minimum oil absorption.
+        </p>
+      </div>
+
+      <div class="snacks-cards-grid">
+        <!-- Snack 1: Banana Chips -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-banana-chips.jpg" alt="Golden Banana Chips" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Banana Chips &amp; Wafers</h3>
+          <span class="snack-card-machine">Circular / Rectangular Batch Fryers</span>
+          <p class="snack-card-desc">Crispy golden slices fried under precise dynamic thermal regulation with external pellet heat exchangers.</p>
+        </div>
+
+        <!-- Snack 2: Potato Chips -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-potato-chips.jpg" alt="Crispy Potato Chips" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Crispy Potato Chips</h3>
+          <span class="snack-card-machine">Potato Slicer &amp; Chips Lines</span>
+          <p class="snack-card-desc">Plain, ridged, and kettle-style potato chips with micrometer thickness control and rapid oil turnover.</p>
+        </div>
+
+        <!-- Snack 3: Nylon Sev & Bhujia -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-nylon-sev.jpg" alt="Nylon Sev and Bikaneri Bhujia" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Nylon Sev &amp; Bhujia</h3>
+          <span class="snack-card-machine">Automatic Sev &amp; Boondi Line</span>
+          <p class="snack-card-desc">Delicate golden namkeen strands with continuous slurry drop head, submersing belt, and hydro de-oiling.</p>
+        </div>
+
+        <!-- Snack 4: Gathiya & Papdi -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-gathiya-bowl.png" alt="Bhavnagari Gathiya and Papdi" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Gathiya &amp; Papdi</h3>
+          <span class="snack-card-machine">Heavy-Duty Namkeen Extruder</span>
+          <p class="snack-card-desc">Traditional besan snacks extruded directly over frying pans with quick-change brass and SS multi-dies.</p>
+        </div>
+
+        <!-- Snack 5: Poha Chivda & Namkeen Mix -->
+        <div class="snack-feature-card">
+          <div class="snack-img-bubble">
+            <img src="assets/images/snack-poha-chivda.jpg" alt="Poha Chivda & Namkeen Mixture" loading="lazy">
+          </div>
+          <h3 class="snack-card-name">Chivda &amp; Namkeen Mix</h3>
+          <span class="snack-card-machine">Octagonal Flavouring Drum</span>
+          <p class="snack-card-desc">Multi-ingredient roasted &amp; fried mixtures gently tumbled with seasonings for zero breakage and uniform taste.</p>
         </div>
       </div>
     </div>
@@ -486,6 +583,75 @@
         <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end; margin-top: 1.5rem;">
           <a href="semi-automatic-chips-line.html" class="btn btn-outline-gold">View Chips Line Specifications →</a>
           <a href="#rfq-section" class="btn btn-primary">Request Turnkey Plant Layout Proposal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Trusted Clients Showcase Section -->
+  <section class="section-spacing trusted-clients-section" id="clients" aria-label="Our Trusted Clients">
+    <div class="container">
+      <div class="section-header text-center trusted-clients-header">
+        <span class="section-kicker">Industry Recognition &amp; Partnerships</span>
+        <h2 class="section-title">Our Trusted Clients</h2>
+        <p class="section-lead">
+          Leading snack manufacturers and commercial food brands across Maharashtra, Gujarat, and nationwide trust Kravionex high-efficiency continuous fryers, automatic namkeen lines, and turnkey food processing plants.
+        </p>
+      </div>
+
+      <div class="clients-showcase-grid">
+        <!-- Client 1: JM Chips & Snacks -->
+        <div class="client-trust-card">
+          <h4 class="client-company-name">JM Chips &amp; Snacks</h4>
+          <div class="client-logo-box">
+            <img src="assets/images/clients/client-jm-chips.jpg" alt="JM Chips &amp; Snacks Official Logo" loading="lazy">
+          </div>
+          <span class="client-specialty-tag">Chips &amp; Wafers</span>
+        </div>
+
+        <!-- Client 2: Bamane's Foods -->
+        <div class="client-trust-card">
+          <h4 class="client-company-name">Bamane's</h4>
+          <div class="client-logo-box">
+            <img src="assets/images/clients/client-bamanes.jpg" alt="Bamane's Snacks Official Logo" loading="lazy">
+          </div>
+          <span class="client-specialty-tag">Namkeen &amp; Bhujia</span>
+        </div>
+
+        <!-- Client 3: Om Shanti Namkeen -->
+        <div class="client-trust-card">
+          <h4 class="client-company-name">Om Shanti Namkeen</h4>
+          <div class="client-logo-box">
+            <img src="assets/images/clients/client-om-shanti.jpg" alt="Om Shanti Namkeen Official Logo" loading="lazy">
+          </div>
+          <span class="client-specialty-tag">Sev &amp; Farsan</span>
+        </div>
+
+        <!-- Client 4: Tasty Tung -->
+        <div class="client-trust-card">
+          <h4 class="client-company-name">Tasty Tung</h4>
+          <div class="client-logo-box">
+            <img src="assets/images/clients/client-tasty-tung.png" alt="Tasty Tung Official Logo" loading="lazy">
+          </div>
+          <span class="client-specialty-tag">Pellets &amp; Snacks</span>
+        </div>
+
+        <!-- Client 5: Kheteshwar Foods -->
+        <div class="client-trust-card">
+          <h4 class="client-company-name">Kheteshwar Foods</h4>
+          <div class="client-logo-box">
+            <img src="assets/images/clients/client-kheteshwar.jpg" alt="Kheteshwar Foods Official Logo" loading="lazy">
+          </div>
+          <span class="client-specialty-tag">Specialty Namkeen</span>
+        </div>
+
+        <!-- Client 6: Jalsa Foods -->
+        <div class="client-trust-card">
+          <h4 class="client-company-name">Jalsa Foods</h4>
+          <div class="client-logo-box">
+            <img src="assets/images/clients/client-jalsa-foods.png" alt="Jalsa Foods Official Logo" loading="lazy">
+          </div>
+          <span class="client-specialty-tag">Premium Snacks</span>
         </div>
       </div>
     </div>
