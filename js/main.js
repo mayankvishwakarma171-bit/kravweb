@@ -273,13 +273,16 @@ window.openMobileNav = function() {
   const overlay = document.getElementById('drawer-overlay') || document.querySelector('.drawer-overlay');
   if (drawer) {
     drawer.classList.add('open');
-    drawer.style.right = '0';
+    drawer.style.setProperty('right', '0', 'important');
+    drawer.style.setProperty('visibility', 'visible', 'important');
+    drawer.style.setProperty('display', 'flex', 'important');
   }
   if (overlay) {
     overlay.classList.add('active');
-    overlay.style.display = 'block';
-    overlay.style.opacity = '1';
-    overlay.style.pointerEvents = 'auto';
+    overlay.style.setProperty('display', 'block', 'important');
+    overlay.style.setProperty('opacity', '1', 'important');
+    overlay.style.setProperty('visibility', 'visible', 'important');
+    overlay.style.setProperty('pointer-events', 'auto', 'important');
   }
   document.documentElement.style.overflow = 'hidden';
   document.body.style.overflow = 'hidden';
@@ -290,13 +293,18 @@ window.closeMobileNav = function() {
   const overlay = document.getElementById('drawer-overlay') || document.querySelector('.drawer-overlay');
   if (drawer) {
     drawer.classList.remove('open');
-    drawer.style.right = '';
+    drawer.style.setProperty('right', '-110%', 'important');
   }
   if (overlay) {
     overlay.classList.remove('active');
-    overlay.style.display = '';
-    overlay.style.opacity = '';
-    overlay.style.pointerEvents = '';
+    overlay.style.setProperty('opacity', '0', 'important');
+    overlay.style.setProperty('visibility', 'hidden', 'important');
+    overlay.style.setProperty('pointer-events', 'none', 'important');
+    setTimeout(() => {
+      if (overlay && (!drawer || !drawer.classList.contains('open'))) {
+        overlay.style.setProperty('display', 'none', 'important');
+      }
+    }, 250);
   }
   document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
@@ -311,7 +319,7 @@ window.toggleMobileDropdown = function(btn) {
 
 // 2. Mobile Menu Navigation Initializer
 function initMobileMenu() {
-  const toggleBtns = document.querySelectorAll('.mobile-nav-toggle');
+  const toggleBtns = document.querySelectorAll('.mobile-nav-toggle, #nav-toggle-btn');
   const closeBtns = document.querySelectorAll('.mobile-drawer-close');
   const overlay = document.getElementById('drawer-overlay') || document.querySelector('.drawer-overlay');
 

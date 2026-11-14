@@ -68,6 +68,96 @@ p, span, a, li, td, th {
   }
 }
 
+/* Universal Hamburger Toggle: Works on PC, Laptop, Tablet, and Mobile */
+.mobile-nav-toggle {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 5px !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  border-radius: 8px !important;
+  background: rgba(197, 161, 91, 0.12) !important;
+  border: 1.5px solid rgba(197, 161, 91, 0.45) !important;
+  cursor: pointer !important;
+  padding: 10px 8px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  z-index: 1005 !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.mobile-nav-toggle:hover {
+  background: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  transform: scale(1.05) !important;
+}
+
+.mobile-nav-toggle:hover .hamburger-bar {
+  background-color: #141C22 !important;
+}
+
+.hamburger-bar {
+  display: block !important;
+  width: 22px !important;
+  height: 2.5px !important;
+  background-color: var(--text-primary) !important;
+  border-radius: 2px !important;
+  transition: all 0.25s ease !important;
+  pointer-events: none !important;
+}
+
+.mobile-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: -105% !important;
+  width: 330px !important;
+  max-width: 88vw !important;
+  height: 100% !important;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  background: #FAF8F2 !important;
+  z-index: 99999 !important;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.3) !important;
+  transition: right 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 1.25rem 2rem 1.25rem !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.mobile-drawer.open {
+  right: 0 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+.drawer-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(13, 21, 32, 0.65) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  z-index: 99998 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease !important;
+}
+
+.drawer-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  pointer-events: auto !important;
+}
+
 /* Header & Mobile Toggle Responsiveness */
 @media (max-width: 1024px) {
   .site-header {
@@ -110,24 +200,6 @@ p, span, a, li, td, th {
     align-items: center;
     gap: 0;
     flex-shrink: 0;
-  }
-  
-  .mobile-nav-toggle {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    padding: 8px;
-    border-radius: 8px;
-    background: rgba(197, 161, 91, 0.12);
-    border: 1.5px solid rgba(197, 161, 91, 0.4);
-    color: var(--text-primary);
-    cursor: pointer;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-    z-index: 1005;
   }
 }
 
