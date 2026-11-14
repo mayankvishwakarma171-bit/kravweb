@@ -339,20 +339,29 @@
         </ul>
         <div class="nav-actions">
           <a href="contact.html" class="btn btn-primary btn-sm">Request Quotation</a>
-          <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          <button class="mobile-nav-toggle" id="nav-toggle-btn" onclick="openMobileNav()" aria-label="Open Navigation Menu" title="Open Navigation Menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
           </button>
         </div>
       </nav>
     </div>
   </header>
-  <!-- Mobile Drawer -->
-  <div class="drawer-overlay"></div>
-  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+ <!-- Mobile Responsive Drawer Menu -->
+  <div class="drawer-overlay" id="drawer-overlay" onclick="closeMobileNav()"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div class="mobile-drawer-header">
-      <a href="index.html" class="brand-logo"><img src="assets/images/kravionex-official-logo.png" alt="Kravionex Machinery LLP Logo" class="brand-logo-img"><div class="brand-text-wrap"><span class="brand-name">Kravionex</span><span class="brand-subtitle">Machinery LLP</span></div></a>
-      <button class="mobile-drawer-close" aria-label="Close Mobile Menu" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">&times;</button>
+            <a href="index.html" class="mobile-logo" onclick="closeMobileNav()" style="display:flex; align-items:center; gap:0.65rem; text-decoration:none;">
+        <img src="assets/images/kravionex-official-logo.png" alt="Kravionex Machinery LLP" style="height:42px; width:42px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+        <div style="display:flex; flex-direction:column;">
+          <span style="font-family:var(--font-serif); font-weight:700; font-size:1.15rem; color:var(--text-primary); line-height:1.1;">Kravionex</span>
+          <span style="font-size:0.65rem; font-weight:700; letter-spacing:0.12em; color:var(--accent-gold-dark); text-transform:uppercase;">Machinery LLP</span>
+        </div>
+      </a>
+      <button class="mobile-drawer-close" onclick="closeMobileNav()" aria-label="Close Mobile Menu">&times;</button>
     </div>
+    <div class="mobile-drawer-body">
     <ul class="mobile-nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="mobile-has-dropdown">
