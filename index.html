@@ -178,8 +178,10 @@
         <!-- Action CTAs -->
         <div class="nav-actions">
           <a href="#rfq-section" class="btn btn-primary btn-sm">Request Quotation</a>
-          <button class="mobile-nav-toggle" onclick="openMobileNav()" aria-label="Toggle Navigation Menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          <button class="mobile-nav-toggle" id="nav-toggle-btn" onclick="openMobileNav()" aria-label="Open Navigation Menu" title="Open Navigation Menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
           </button>
         </div>
       </nav>
@@ -1072,6 +1074,53 @@
     <span>Chat with Sales (+91 9930985514)</span>
   </a>
 
+  <!-- Instantaneous Navigation Drawer Engine -->
+  <script>
+    function openMobileNav() {
+      var d = document.getElementById('mobile-drawer');
+      var o = document.getElementById('drawer-overlay');
+      if (d) {
+        d.classList.add('open');
+        d.style.setProperty('right', '0', 'important');
+        d.style.setProperty('visibility', 'visible', 'important');
+        d.style.setProperty('display', 'flex', 'important');
+      }
+      if (o) {
+        o.classList.add('active');
+        o.style.setProperty('display', 'block', 'important');
+        o.style.setProperty('opacity', '1', 'important');
+        o.style.setProperty('visibility', 'visible', 'important');
+        o.style.setProperty('pointer-events', 'auto', 'important');
+      }
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileNav() {
+      var d = document.getElementById('mobile-drawer');
+      var o = document.getElementById('drawer-overlay');
+      if (d) {
+        d.classList.remove('open');
+        d.style.setProperty('right', '-110%', 'important');
+      }
+      if (o) {
+        o.classList.remove('active');
+        o.style.setProperty('opacity', '0', 'important');
+        o.style.setProperty('visibility', 'hidden', 'important');
+        o.style.setProperty('pointer-events', 'none', 'important');
+        setTimeout(function() {
+          if (o && (!d || !d.classList.contains('open'))) {
+            o.style.setProperty('display', 'none', 'important');
+          }
+        }, 250);
+      }
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }
+    function toggleMobileDropdown(btn) {
+      var item = btn ? btn.closest('.mobile-has-dropdown') : document.querySelector('.mobile-has-dropdown');
+      if (item) item.classList.toggle('open');
+    }
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
