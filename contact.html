@@ -1,13 +1,58 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact & RFQ | Kravionex Machinery LLP - Maharashtra, India</title>
-  <meta name="description" content="Contact Kravionex Machinery LLP in Maharashtra, India. Request a technical quotation, factory visit, or custom plant layout for food-processing and snack-making machinery.">
-  <link rel="canonical" href="https://www.kravionex.com/contact.html">
+  <title>Contact Kravionex Machinery | Sales, Support & Factory Locations</title>
+  <meta name="description" content="Get in touch with Kravionex Machinery LLP for quotations, plant visits, and technical consultations. Phone: +91 9930985514 / +91 7506665188.">
+  <meta name="keywords" content="contact kravionex machinery, snack machinery quotation, food processing machinery manufacturer contact">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://kravionex.com/contact.html">
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Kravionex Machinery | Sales, Support & Factory Locations">
+  <meta property="og:description" content="Get in touch with Kravionex Machinery LLP for quotations, plant visits, and technical consultations. Phone: +91 9930985514 / +91 7506665188.">
+  <meta property="og:url" content="https://kravionex.com/contact.html">
+  <meta property="og:site_name" content="Kravionex Machinery LLP">
+  <meta property="og:image" content="https://kravionex.com/assets/images/kravionex-official-logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Kravionex Machinery | Sales, Support & Factory Locations">
+  <meta name="twitter:description" content="Get in touch with Kravionex Machinery LLP for quotations, plant visits, and technical consultations. Phone: +91 9930985514 / +91 7506665188.">
+  <meta name="twitter:image" content="https://kravionex.com/assets/images/kravionex-official-logo.png">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Ã¢Å¡â„¢Ã¯Â¸Â</text></svg>">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kravionex Machinery LLP",
+    "url": "https://kravionex.com/",
+    "logo": "https://kravionex.com/assets/images/kravionex-official-logo.png",
+    "description": "Leading Indian manufacturer of industrial snack frying lines, continuous fryers, potato chips plants, sev extruders, and food processing systems.",
+    "telephone": ["+919930985514", "+917506665188"],
+    "email": "kravionex.machinery@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vapi / Mumbai",
+      "addressRegion": "Maharashtra & Gujarat",
+      "addressCountry": "IN"
+    },
+    "hasMap": "https://maps.app.goo.gl/qcqS49icv6Lrznpw5",
+    "sameAs": [
+      "https://www.youtube.com/@kravionexmachinery",
+      "https://www.linkedin.com/in/dinesh-vishwakarma-75270a391",
+      "https://www.instagram.com/kravionexmachinellp"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -115,67 +160,86 @@
             </div>
           </li>
           <li><a href="turnkey-lines.html" class="nav-link">Our Projects</a></li>
+          <li><a href="index.html#clients" class="nav-link">Our Clients</a></li>
           <li><a href="about.html" class="nav-link">About Us</a></li>
           <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
         </ul>
 
         <div class="nav-actions">
           <a href="#rfq-section" class="btn btn-primary btn-sm">Request Quotation</a>
-          <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          <button class="mobile-nav-toggle" id="nav-toggle-btn" onclick="openMobileNav()" aria-label="Open Navigation Menu" title="Open Navigation Menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
           </button>
         </div>
       </nav>
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="drawer-overlay"></div>
-  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+      <!-- Mobile Responsive Drawer Menu -->
+  <div class="drawer-overlay" id="drawer-overlay" onclick="closeMobileNav()"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div class="mobile-drawer-header">
-      <a href="index.html" class="brand-logo">
-        <img src="assets/images/kravionex-official-logo.png" alt="Kravionex Machinery LLP Logo" class="brand-logo-img">
-        <div class="brand-text-wrap">
-          <span class="brand-name">Kravionex</span>
-          <span class="brand-subtitle">Machinery LLP</span>
+            <a href="index.html" class="mobile-logo" onclick="closeMobileNav()" style="display:flex; align-items:center; gap:0.65rem; text-decoration:none;">
+        <img src="assets/images/kravionex-official-logo.png" alt="Kravionex Machinery LLP" style="height:42px; width:42px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+        <div style="display:flex; flex-direction:column;">
+          <span style="font-family:var(--font-serif); font-weight:700; font-size:1.15rem; color:var(--text-primary); line-height:1.1;">Kravionex</span>
+          <span style="font-size:0.65rem; font-weight:700; letter-spacing:0.12em; color:var(--accent-gold-dark); text-transform:uppercase;">Machinery LLP</span>
         </div>
       </a>
-      <button class="mobile-drawer-close" aria-label="Close Mobile Menu" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">&times;</button>
+      <button class="mobile-drawer-close" onclick="closeMobileNav()" aria-label="Close Mobile Menu">&times;</button>
     </div>
-    <ul class="mobile-nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="mobile-has-dropdown">
-        <a href="products.html">Products <svg class="mobile-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
-        <ul class="mobile-sub-links">
-          <li><a href="products.html">Ã°Å¸â€Â¥ Circular Batch Fryer (Pellet HE)</a></li>
-          <li><a href="products.html">Ã°Å¸â€Â¶ Rectangular Tilting Batch Fryer</a></li>
-          <li><a href="products.html">Ã°Å¸Å’â‚¬ Shell &amp; Tube Circular Fryer</a></li>
-          <li><a href="products.html">Ã°Å¸Å’Â¾ Direct-Fired Batch Fryer</a></li>
-          <li><a href="products.html">Ã¢Å¡Â¡ Continuous Namkeen &amp; Pellet Fryer</a></li>
-          <li><a href="products.html">Ã°Å¸ÂÂ­ Multi-Product Continuous Frying System</a></li>
-          <li><a href="products.html">Ã°Å¸â€Â© Namkeen &amp; Sev Extruder</a></li>
-          <li><a href="products.html">Ã°Å¸Â¥â€ High-Speed Potato Slicer</a></li>
-          <li><a href="products.html">Ã°Å¸Â«â„¢ Root Vegetable Peeler</a></li>
-          <li><a href="products.html">Ã¢Å“Â¨ Flavouring Drum</a></li>
-        </ul>
-      </li>
-      <li><a href="turnkey-lines.html">Our Projects</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html" class="active">Contact Us</a></li>
-    </ul>
-    <div style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-surface-warm); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
-      <p style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold-dark); text-transform: uppercase;">Direct Contact</p>
-      <p style="font-size: 0.85rem; margin-top: 0.25rem;">
-        <strong>Domestic Sales:</strong><br>
-        <a href="tel:+919930985514" style="color: var(--text-primary); font-weight: 600;">+91 9930985514</a>
-      </p>
-      <p style="font-size: 0.85rem; margin-top: 0.4rem;">
-        <strong>Office:</strong><br>
-        <a href="tel:+917506665188" style="color: var(--text-primary);">+91 7506665188</a> / <a href="tel:+917506665187" style="color: var(--text-primary);">+91 7506665187</a>
-      </p>
-      <p style="font-size: 0.825rem; margin-top: 0.4rem;">
-        <a href="mailto:kravionex.machinery@gmail.com" style="color: var(--accent-gold-dark);">kravionex.machinery@gmail.com</a>
-      </p>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" onclick="closeMobileNav()">Home</a></li>
+        
+        <li class="mobile-has-dropdown">
+          <a href="products.html" class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this); return false;">
+            <span>Products</span>
+            <svg class="mobile-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="mobile-sub-links">
+            <li><a href="products.html" style="font-weight:700;color:var(--accent-gold-dark);" onclick="closeMobileNav()">&rarr; View All Products Catalog</a></li>
+            <li><a href="circular-batch-fryer-he.html" onclick="closeMobileNav()">&bull; Circular Batch Fryer (Pellet HE)</a></li>
+            <li><a href="rectangular-batch-fryer.html" onclick="closeMobileNav()">&bull; Rectangular Tilting Batch Fryer</a></li>
+            <li><a href="continuous-fryer-pellet.html" onclick="closeMobileNav()">&bull; Continuous Namkeen Fryer</a></li>
+            <li><a href="multi-product-continuous-frying-system.html" onclick="closeMobileNav()">&bull; Multi Product Continuous Frying Line</a></li>
+            <li><a href="automatic-sev-boondi-line.html" onclick="closeMobileNav()">&bull; Automatic Sev &amp; Boondi Line</a></li>
+            <li><a href="semi-automatic-chips-line.html" onclick="closeMobileNav()">&bull; Semi-Automatic Potato Chips Line</a></li>
+            <li><a href="shell-tube-circular-fryer.html" onclick="closeMobileNav()">&bull; Shell &amp; Tube Circular Fryer</a></li>
+            <li><a href="namkeen-extruder-machine.html" onclick="closeMobileNav()">&bull; Namkeen &amp; Sev Extruder</a></li>
+            <li><a href="potato-slicer-machine.html" onclick="closeMobileNav()">&bull; High-Speed Potato Slicer</a></li>
+            <li><a href="potato-peeler-machine.html" onclick="closeMobileNav()">&bull; Industrial Potato Peeler</a></li>
+            <li><a href="flavouring-drum-machine.html" onclick="closeMobileNav()">&bull; Octagonal Flavouring Drum</a></li>
+            <li><a href="circular-batch-fryer-furnace.html" onclick="closeMobileNav()">&bull; Direct-Fired Biomass Fryer</a></li>
+          </ul>
+        </li>
+  
+        <li><a href="turnkey-lines.html" onclick="closeMobileNav()">Our Projects</a></li>
+        <li><a href="index.html#clients" onclick="closeMobileNav()">Our Clients</a></li>
+        <li><a href="about.html" onclick="closeMobileNav()">About Us</a></li>
+        <li><a href="contact.html" onclick="closeMobileNav()">Contact Us</a></li>
+      </ul>
+      
+      <div class="mobile-drawer-cta-wrap">
+        <a href="https://wa.me/919930985514?text=Hello%20Kravionex%2C%20I%20would%20like%20to%20request%20an%20instant%20quotation%20for%20food%20processing%20machinery." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block mobile-rfq-btn">
+          Request Quotation (WhatsApp)
+        </a>
+      </div>
+
+      <div class="mobile-drawer-contact-card">
+        <p class="mobile-contact-title">Direct Sales &amp; Technical Support</p>
+        <p class="mobile-contact-item">
+          <strong>Phone:</strong> <a href="tel:+919930985514">+91 9930985514</a> / <a href="tel:+917506665188">+91 7506665188</a>
+        </p>
+        <p class="mobile-contact-item">
+          <strong>Email:</strong> <a href="mailto:kravionex.machinery@gmail.com">kravionex.machinery@gmail.com</a>
+        </p>
+        <p class="mobile-contact-item">
+          <strong>Location:</strong> Vapi, Gujarat &amp; Mumbai, India
+        </p>
+      </div>
     </div>
   </aside>
 
@@ -442,6 +506,52 @@
     <span>Chat with Sales (+91 9930985514)</span>
   </a>
 
-  <script src="js/main.js"></script>
+  <!-- Instantaneous Navigation Drawer Engine -->
+<script>
+  function openMobileNav() {
+    var d = document.getElementById('mobile-drawer');
+    var o = document.getElementById('drawer-overlay');
+    if (d) {
+      d.classList.add('open');
+      d.style.setProperty('right', '0', 'important');
+      d.style.setProperty('visibility', 'visible', 'important');
+      d.style.setProperty('display', 'flex', 'important');
+    }
+    if (o) {
+      o.classList.add('active');
+      o.style.setProperty('display', 'block', 'important');
+      o.style.setProperty('opacity', '1', 'important');
+      o.style.setProperty('visibility', 'visible', 'important');
+      o.style.setProperty('pointer-events', 'auto', 'important');
+    }
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileNav() {
+    var d = document.getElementById('mobile-drawer');
+    var o = document.getElementById('drawer-overlay');
+    if (d) {
+      d.classList.remove('open');
+      d.style.setProperty('right', '-110%', 'important');
+    }
+    if (o) {
+      o.classList.remove('active');
+      o.style.setProperty('opacity', '0', 'important');
+      o.style.setProperty('visibility', 'hidden', 'important');
+      o.style.setProperty('pointer-events', 'none', 'important');
+      setTimeout(function() {
+        if (o && (!d || !d.classList.contains('open'))) {
+          o.style.setProperty('display', 'none', 'important');
+        }
+      }, 250);
+    }
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  }
+  function toggleMobileDropdown(btn) {
+    var item = btn ? btn.closest('.mobile-has-dropdown') : document.querySelector('.mobile-has-dropdown');
+    if (item) item.classList.toggle('open');
+  }
+</script><script src="js/main.js"></script>
 </body>
 </html>
