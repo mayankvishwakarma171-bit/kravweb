@@ -816,3 +816,80 @@ function initRfqForm() {
     });
   });
 }
+<!-- ---------- Inline navigation helpers (must be placed before main.js) ---------- -->
+<script>
+  /* Open the mobile drawer */
+  function openMobileNav() {
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    if (drawer) {
+      drawer.classList.add('open');
+      drawer.style.setProperty('right', '0', 'important');
+      drawer.style.setProperty('visibility', 'visible', 'important');
+      drawer.style.setProperty('display', 'flex', 'important');
+    }
+    if (overlay) {
+      overlay.classList.add('active');
+      overlay.style.setProperty('display', 'block', 'important');
+      overlay.style.setProperty('opacity', '1', 'important');
+      overlay.style.setProperty('visibility', 'visible', 'important');
+      overlay.style.setProperty('pointer-events', 'auto', 'important');
+    }
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
+
+  /* Close the mobile drawer */
+  function closeMobileNav() {
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    if (drawer) {
+      drawer.classList.remove('open');
+      drawer.style.setProperty('right', '-110%', 'important');
+    }
+    if (overlay) {
+      overlay.classList.remove('active');
+      overlay.style.setProperty('opacity', '0', 'important');
+      overlay.style.setProperty('visibility', 'hidden', 'important');
+      overlay.style.setProperty('pointer-events', 'none', 'important');
+      setTimeout(() => {
+        if (!drawer || !drawer.classList.contains('open')) {
+          overlay.style.setProperty('display', 'none', 'important');
+        }
+      }, 250);
+    }
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  }
+
+  /* Toggle sub‑menu inside the drawer (used for “Products ▾”) */
+  function toggleMobileDropdown(btn) {
+    const item = btn ? btn.closest('.mobile-has-dropdown')
+                      : document.querySelector('.mobile-has-dropdown');
+    if (item) item.classList.toggle('open');
+  }
+
+  /* Initialise click / touch handlers (run once) */
+  function initMobileMenu() {
+    const toggle = document.getElementById('nav-toggle-btn');
+    if (toggle) {
+      toggle.addEventListener('click', openMobileNav);
+      toggle.addEventListener('touchstart', e => { e.preventDefault(); openMobileNav(); }, {passive:false});
+    }
+    const closeBtn = document.querySelector('.mobile-drawer-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeMobileNav);
+      closeBtn.addEventListener('touchstart', e => { e.preventDefault(); closeMobileNav(); }, {passive:false});
+    }
+    const overlay = document.getElementById('drawer-overlay');
+    if (overlay) {
+      overlay.addEventListener('click', closeMobileNav);
+      overlay.addEventListener('touchstart', e => { e.preventDefault(); closeMobileNav(); }, {passive:false});
+    }
+  }
+  /* Run on page load */
+  if (document.readyState !== 'loading') initMobileMenu(); else document.addEventListener('DOMContentLoaded', initMobileMenu);
+</script>
+
+<!-- Existing external script (keep this line) -->
+<script src="js/main.js"></script>
